@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-lg">
 <?php
-//  affichage des fonctionnalités accessibles aux étudiants
+//  affichage des fonctionnalités accessibles aux professeurs
 if ($_SESSION['rank'] == "professeur") { 
     echo'
     
@@ -23,10 +23,10 @@ if ($_SESSION['rank'] == "professeur") {
 
               <ul class="dropdown-menu">
                   <li>
-                  <a href="lister_entreprises.php?classe=SIO1"> BTS SIO1</a>
+                  <a href="lister_demarche_entreprise.php?$classe=SIO1"> BTS SIO1</a>
                   </li>
                   <li>
-                  <a href="lister_entreprises.php?classe=SIO2"> BTS SIO2</a>
+                  <a href="lister_demarche_entreprise.php?$classe=SIO2"> BTS SIO2</a>
                   </li>
               </ul>
        </li>
@@ -44,6 +44,20 @@ if ($_SESSION['rank'] == "professeur") {
                   </li>
               </ul>  
         </li>
+        <li class="nav-link dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                 Lister les étudiants et leurs démarches prof spe
+            </a>
+
+              <ul class="dropdown-menu">
+                  <li>
+                  <a href="lister_demarche_spe.php?$classe=SIO1"> BTS SIO1</a>
+                  </li>
+                  <li>
+                  <a href="lister_demarche_spe.php?$classe=SIO2"> BTS SIO2</a>
+                  </li>
+              </ul>
+       </li>
   </ul>
   ';
 }    

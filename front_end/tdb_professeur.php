@@ -91,7 +91,7 @@
                                          <td>'. $row['PRENOM_ETUDIANT'].'</td>
                                          <td>'. $row['NB_DEM'].'</td>
                                          <td>
-                                            <a href="" data-toggle="modal" data-target="#exampleModalCenter"><span class="badge badge-success">Voir</span></a>
+                                            <button> <a href="lister_der_dem_et.php"data-toggle="modal" data-target="#exampleModalCenter"><span class="badge badge-success">Voir</span></a></button>
                                          </td>
                                       </tr> 
                          ';  } ?>

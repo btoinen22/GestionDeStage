@@ -27,25 +27,25 @@
                                 <form method="POST" id="modifier-profil">
                                     <div class="form-row mt-5">
                                         <div class="form-group col-md-6">
-                                            <label for="Nom">Nom de l'étudiant</label>
+                                            <label for="Nom">Nom</label>
                                             <input type="text" class="form-control" id="nom" name="nom"
                                                 value="<?php echo($nom); ?>" placeholder="Ex: Doe">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="prenom">Prénom de l'étudiant</label>
+                                            <label for="prenom">Prénom</label>
                                             <input type="text" class="form-control" id="prenom" name="prenom"
                                                 value="<?php echo($prenom); ?>" placeholder="Ex: John">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="email">Adresse Email de l'étudiant</label>
+                                            <label for="email">Adresse Email</label>
                                             <input type="email" class="form-control" id="email" name="email"
                                                 value="<?php echo($email); ?>"
                                                 placeholder="Ex: nom.prenom@mail.com">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="telephone">Téléphone de l'étudiant</label>
+                                            <label for="telephone">Téléphone</label>
                                             <input type="text" class="form-control" id="telephone" name="telephone"
                                                 value="<?php echo($telephone); ?>"
                                                 placeholder="Ex: +33123456789">

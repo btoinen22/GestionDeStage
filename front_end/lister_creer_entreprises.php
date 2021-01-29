@@ -8,7 +8,7 @@
 
 <?php 
     $title = "Liste des Entreprises";    
-    // inclusion des fichiers header, tt du type d'utilisateur
+    // inclusion des fichiers hedaer, tt du type d'utilisateur
     include '../includes/header.php';   
    include '../middlewares/etudiant.php';  
     // inclusion des fichiers de traitements de données   
@@ -38,12 +38,13 @@
                                                 <th scope="col">VILLE</th>
                                                 <th scope="col">Téléphone</th>
                                                 <th scope="col">Courriel</th>
-                                                <th scope="col">NB Démarche étudiant(s)</th>
+                                                <th scope="col">NB Démarche étudiant(s) </th>
+                                                
                                                 <th scope="col">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <!-- parcours de toutes les entreprises de la BDR
+                                        <!-- parcours de toutes  les entrepreises de la BDR
                                         et affichages des caractéristiques trouvées
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
