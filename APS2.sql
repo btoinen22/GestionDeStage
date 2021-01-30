@@ -2,10 +2,10 @@
 #       DATABASE de l''aplication
 # -----------------------------------------------------------------------------
 
-DROP DATABASE IF EXISTS PPENR;
+DROP DATABASE IF EXISTS APS2;
 
-CREATE DATABASE IF NOT EXISTS PPENR;
-USE PPENR;
+CREATE DATABASE IF NOT EXISTS APS2;
+USE APS2;
 # -----------------------------------------------------------------------------
 #       *TABLE : MOYENCOM
 # -----------------------------------------------------------------------------
