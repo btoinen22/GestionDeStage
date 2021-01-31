@@ -7,7 +7,6 @@ include '../includes/header.php';
 include '../middlewares/professeur.php';
 include '../back_end/show-data_gen.php';
 include '../back_end/show-data_prof.php';
-
 ?>
 
 <body>
@@ -97,12 +96,13 @@ include '../back_end/show-data_prof.php';
                                          <td>' . $row['PRENOM_ETUDIANT'] . '</td>
                                          <td>' . $row['NB_DEM'] . '</td>
                                          <td>
-                                         <a href="" data-toggle="modal" data-target="#ModalStage"><span class ="badge badge-success" onclick="rowNom = \"test\" ;">
-                                         Voir
-                                         </span></button>                                       
+                                            <a href="lister_demarches_prof.php/?id=' . $row["ID"] . '">
+                                                <span class ="badge badge-success";">
+                                                Voir
+                                                </span>
+                                            </a>                                      
                                          </td>
-                                      </tr> 
-                         ';
+                                      </tr>';
                                 } ?>
                             </tbody>
                         </table>
@@ -121,29 +121,7 @@ include '../back_end/show-data_prof.php';
         </div>
     </div>
 
-
-    <!-- Modal pour afficher les démarches d'un étudiant -->
-    <div class="modal fade" id="ModalStage" tabindex="-1" role="dialog" aria-labelledby="ModalStageLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalStageLabel">Démarches de AFFICHER NOM AVEC rowNom </h5>
-                </div>
-                <div class="modal-body">
-                    INTEGRER LES DEMARCHES
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
     <?php include '../includes/footer.php' ?>
-
 </body>
 
 </html>
