@@ -4,12 +4,13 @@
  *  ce fichier permet de créer une démarche quand l'utilisateur est un etudiant
  **/
 // Vérification que l'utilisateur a bien saisi les informations attendues
+$id= $_GET['id'];
 if (isset($_POST['creer_contact'])) {
     if (!empty($_POST['nom_salarie']) && !empty($_POST['prenom_salarie']) 
         && !empty($_POST['courriel'])&& !empty($_POST['tel'])
     ) {
         // préparation de l'enregistrement de l'entreprise avec les valeurs saisies 
-        $query = "INSERT INTO salarie (NOM_SALARIE,PRENOM_SALARIE,EMAIL_SALARIE,TEL_SALARIE) VALUES (:nom,:prenom,:email,:tel);";
+        $query = "INSERT INTO salarie (NOM_SALARIE,PRENOM_SALARIE,TEL_SALARIE,EMAIL_SALARIE,ID_ENTREPRISE  ) VALUES (:nom,:prenom,:tel,:email,:id);"
         $stmt = $db->prepare($query);
         $stmt->bindValue(':nom', $_POST['nom_salarie'], PDO::PARAM_STR);
         $stmt->bindValue(':prenom', $_POST['prenom_salarie'], PDO::PARAM_STR);

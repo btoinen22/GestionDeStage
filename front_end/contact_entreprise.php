@@ -6,11 +6,8 @@
     // inclusion des fichiers hedaer, tt du type d'utilisateur
     include '../includes/header.php';   
    include '../middlewares/etudiant.php';  
-    // inclusion des fichiers de traitements de données
-    include_once '../back_end/recherche_entreprise.php';  
-     
-        
-    ?>
+   include_once '../back_end/creer_contact.php';
+?>
 
 <body>
     <?php 
@@ -42,33 +39,7 @@
                                                 <p class="card-text">  <?php if ($entreprise['REFUS_ANNEESIO1']==1 ) echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';?>
                                             </div>
                                         </div>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Salarié a contacter</th>
-                                                            <th scope="col">numéro du salarié</th>
-                                                            <th scope="col">courriel</th>
-                                                            
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <?php 
-                                                    require_once("../back_end/affiche_contact.php");
-                                                    foreach ($contact as $contact){
-                                                    ?>
-                                                    <?php 
-                                                            echo '
-                                                                <tr>
-                                                                    <td>'. $contact['NOM_SALARIE'] .'</td>
-                                                                    <td>'. $contact['TEL_SALARIE'] .'</td>
-                                                                    <td>'. $contact['EMAIL_SALARIE'] .'</td>
-                                                                    
-                                                                </tr>';
-                                                                }
-                                                    ?>
-                                                </table>
-                                            </div>
+                                        
                                         
                             </div>
                         </div>

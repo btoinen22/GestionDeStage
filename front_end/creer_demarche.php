@@ -49,7 +49,7 @@
                                         <select   name="id_contact" id="id_contact"  required  >
                                         <?php foreach ($contacts as $contact) { ?> 
                                              <option value="<?php echo $contact['ID_SALARIE']?>"><?php echo $contact['PRENOM_SALARIE'].' '.$contact['NOM_SALARIE'].', Tél :  '.$contact['TEL_SALARIE'].', Courriel :  '.$contact['EMAIL_SALARIE'] ?></option>
-                                           <?php } ?>
+                                           <?php } ?> 
                                         </select>
                                     </div>
                                     <div class="form-group">
