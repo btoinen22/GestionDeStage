@@ -6,12 +6,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-    $title = "Connexion";
-    include '../includes/header.php';    
-    include '../back_end/connexion.php';  
-    $type = $_GET['type'];  
-    ?>
+<?php
+$title = "Connexion";
+include '../includes/header.php';
+include '../back_end/connexion.php';
+$type = $_GET['type'];
+?>
 
 <body class="login-page err-500">
     <div class="container-scroller">
@@ -27,17 +27,22 @@
                                 <!--   NR le 24/12/2020
                                 //  préparation de l'affichage de la zone de messages
                                 -->
-                                <h4>Bienvenue sur iStage !</h4>
+                                <h4>Bienvenue sur iStage ! <br> Connexion en tant que <?php if ($_GET['type'] == "professeur") {
+                                                                                            echo 'professeur.';
+                                                                                        } elseif ($_GET['type'] == "etudiant") {
+                                                                                            echo 'étudiant.';
+                                                                                        } ?></h4>
                                 <h6 class="font-weight-light">Veuillez saisir vos identifiant et mot de passe et </h6>
-                                <?php if($show == true) { 
+                                <?php if ($show == true) {
                                     echo '
-                                    <p class="mt-3 text-'.$color.'">'.$message.'</p>
-                                    ';} 
+                                    <p class="mt-3 text-' . $color . '">' . $message . '</p>
+                                    ';
+                                }
                                 ?>
                                 <!--   NR le 24/12/2020
                                 //  formulaire de saisie des informations nécessaires à la connexion
                                 -->
-                                <form method="POST" id ="connexion" class="mt-4">
+                                <form method="POST" id="connexion" class="mt-4">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Email" required>
                                     </div>
@@ -48,8 +53,7 @@
                                         <button type="submit" name="connexion" id="connexion" class="btn btn-block btn-primary btn-lg">Connexion</button>
                                     </div>
                                     <div class="text-center mt-4 font-weight-light">
-                                        Retour au <a href="lobby.php"
-                                            class="text-primary">Lobby</a>
+                                        Retour au <a href="lobby.php" class="text-primary">Lobby</a>
                                     </div>
                                 </form>
                             </div>
