@@ -59,7 +59,7 @@
                                                     <td>'. escape($row['NB_ET']) .'</td>
                                                     <td>
                                                         <a href="creer_demarche.php?id='.$row['ID_ENTREPRISE'].'" ><span class="badge badge-success">Démarcher</span></a>
-                                                        <a href="contact_entreprise.php?id='.$row['ID_ENTREPRISE'].'"><span class="badge badge-success">Contacter</span></a>
+                                                        <a href="contact_entreprise.php?id='.$row['ID_ENTREPRISE'].'"><span class="badge badge-info">Contacter</span></a>
                                                     </td>
                                                 </tr> 
                                                 '; 
