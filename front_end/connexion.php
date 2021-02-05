@@ -27,11 +27,12 @@ $type = $_GET['type'];
                                 <!--   NR le 24/12/2020
                                 //  préparation de l'affichage de la zone de messages
                                 -->
-                                <h4>Bienvenue sur iStage ! <br> Connexion en tant que <?php if ($_GET['type'] == "professeur") {
-                                                                                            echo 'professeur.';
-                                                                                        } elseif ($_GET['type'] == "etudiant") {
-                                                                                            echo 'étudiant.';
-                                                                                        } ?></h4>
+                                <h4>Bienvenue sur iStage ! <br> Connexion en tant que
+                                    <?php if ($_GET['type'] == "professeur") {
+                                        echo 'professeur.';
+                                    } elseif ($_GET['type'] == "etudiant") {
+                                        echo 'étudiant.';
+                                    } ?></h4>
                                 <h6 class="font-weight-light">Veuillez saisir vos identifiant et mot de passe et </h6>
                                 <?php if ($show == true) {
                                     echo '

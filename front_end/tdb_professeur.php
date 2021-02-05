@@ -52,8 +52,8 @@ include '../back_end/show-data_prof.php';
                                                     <td>' . $row['DATE_DEBUT'] . '</td>
                                                     <td>' . $row['DATE_FIN'] . '</td>
                                                     <td>
-                                                        <a href="scripts/statut-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-success">Valider</span></a>
-                                                        <a href="scripts/refuser-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-danger">Refuser</span></a>
+                                                        <a href="../back_end/accepter-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-success">Valider</span></a>
+                                                        <a href="../back_end/refuser-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-danger">Refuser</span></a>
                                                     </td>
                                                 </tr> 
                                                 ';
