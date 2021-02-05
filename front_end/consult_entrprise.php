@@ -38,8 +38,9 @@
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
                                         <?php foreach ( $consult as $consult) { 
+                            if ('REFUS_ANNEESIO1'||'REFUS_ANNEE_SIO2'==1){
                             echo' 
-                                     <tr>
+                                     <tr class=text-danger>
                                          <td>'. $consult[ 'NOM_ENTREPRISE'].'</td>
                                          <td>'. $consult[ 'ADRESSE_ENTREPRISE'].'</td>
                                          <td>'. $consult[ 'CP_ENTREPRISE'].'</td>
@@ -50,7 +51,25 @@
                                          <td>'. $consult[ 'REFUS_ANNEE_SIO2'].'</td>
                                       </tr> 
                          '; 
-                          } ?>
+                          }
+                            else {
+                                 echo'
+                                <tr class=text-body>  
+                                    <td>'. $consult[ 'NOM_ENTREPRISE'].'</td>
+                                    <td>'. $consult[ 'ADRESSE_ENTREPRISE'].'</td>
+                                    <td>'. $consult[ 'CP_ENTREPRISE'].'</td>
+                                    <td>'. $consult[ 'VILLE_ENTREPRISE'].'</td>
+                                    <td>'. $consult[ 'TEL_ENTREPRISE'].'</td>
+                                    <td>'. $consult[ 'EMAIL_ENTREPRISE'].'</td>
+                                    <td>'. $consult[ 'REFUS_ANNEESIO1'].'</td>
+                                    <td>'. $consult[ 'REFUS_ANNEE_SIO2'].'</td>
+                                    
+                                </tr>
+                            ';  }  }
+                          
+                          
+                          
+                          ?>
                          </tbody>       
                         </table>
             

@@ -6,3 +6,4 @@ $resultat->execute();
 // lecture de la première ligne du jeu d'enregistrements
 $consult = $resultat->fetchAll();
 ?>
+<?php ?>
