@@ -1,14 +1,13 @@
-<?php
-
+<?php 
 /**
  * * NR le 24/12/2020
  *   ce fichier permet de retrouver les informations nécessaires
  *   à l'affichage du tableau de bord
  *      . savoir si le stagiaire a obtenu un stage
  *      . connaitre les démarches effectuées par le candidat
- **/
+ **/ 
 // Conservation de l'identifiant  pour  les traitements sur le professeur
-$id_courant = $_SESSION['id'];
+$id_courant=$_SESSION['id'];
 
 
 // Recherche des stages non validés dans la même spécialité  
@@ -26,14 +25,14 @@ $stmt = $db->prepare(
            ORDER BY NOM_ETUDIANT DESC;"
 );
 $stmt->bindValue(':id', $id_courant, PDO::PARAM_INT);
-$stmt->execute();
+$stmt->execute(); 
 $stageAttente = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countStageAttente = count($stageAttente);
 
 // Recherche des démarches effectuées par les étudiants de BTS SIO1  
-// pour le professeur de référence de la classe (Prof principal)
+// pour le professeur de référence de la classe
 $stmt = $db->prepare(
-    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,etudiant.ID_ETUDIANT AS ID,COUNT(ID_DEMARCHE)  AS NB_DEM  
+    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
         FROM etudiant LEFT JOIN demarche ON ETUDIANT.ID_ETUDIANT=DEMARCHE.ID_ETUDIANT 
             INNER JOIN classe ON ETUDIANT.ID_CLASSE=CLASSE.ID_CLASSE 
         WHERE LIBELLE_CLASSE='SIO1' AND CLASSE.ID_PROF=:id_courant 
@@ -41,7 +40,7 @@ $stmt = $db->prepare(
         ORDER BY NOM_ETUDIANT;"
 );
 $stmt->bindValue(':id_courant', $id_courant, PDO::PARAM_INT);
-$stmt->execute();
+$stmt->execute(); 
 $etudiantsProfRefDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfref = count($etudiantsProfRefDemarche);
 
@@ -49,7 +48,7 @@ $countDemarcheProfref = count($etudiantsProfRefDemarche);
 // décompte des démarches effectuées par chaque étudiant 
 // pour un professeur de spécialité
 $stmt = $db->prepare(
-    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,etudiant.ID_ETUDIANT AS ID,COUNT(ID_DEMARCHE)  AS NB_DEM  
+    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
       FROM etudiant 
           LEFT JOIN demarche ON ETUDIANT.ID_ETUDIANT=DEMARCHE.ID_ETUDIANT 
           INNER JOIN classe ON ETUDIANT.ID_CLASSE=CLASSE.ID_CLASSE 
@@ -59,14 +58,14 @@ $stmt = $db->prepare(
       ORDER BY NOM_ETUDIANT;"
 );
 $stmt->bindValue(':id_courant', $id_courant, PDO::PARAM_INT);
-$stmt->execute();
+$stmt->execute(); 
 $etudiantsProfSpeDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfspe = count($etudiantsProfSpeDemarche);
 
 // Recherche des démarches effectuées par les étudiants de BTS SIO1
 // décompte des démarches effectuées par chaque étudiant associé à un simple professeur
 $stmt = $db->prepare(
-    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,etudiant.ID_ETUDIANT AS ID,COUNT(ID_DEMARCHE)  AS NB_DEM  
+    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
         FROM etudiant 
          LEFT JOIN demarche ON ETUDIANT.ID_ETUDIANT=DEMARCHE.ID_ETUDIANT 
          INNER JOIN classe ON ETUDIANT.ID_CLASSE=CLASSE.ID_CLASSE  
@@ -75,15 +74,20 @@ $stmt = $db->prepare(
         ORDER BY NOM_ETUDIANT;"
 );
 $stmt->bindValue(':id_courant', $id_courant, PDO::PARAM_INT);
-$stmt->execute();
+$stmt->execute(); 
 $etudiantsProfSimpleDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfsimple = count($etudiantsProfSimpleDemarche);
 
-// Conservation des démarches non nulles selon le type du professeur
-if ($countDemarcheProfref >= 1) {
-    $demarches = $etudiantsProfRefDemarche;
-} else if ($countDemarcheProfspe >= 1) {
-    $demarches = $etudiantsProfSpeDemarche;
-} else {
-    $demarches = $etudiantsProfSimpleDemarche;
+// Conservation des démarches non nulles selon le ype du professeur
+if ($countDemarcheProfref>=1) {
+    $demarches=$etudiantsProfRefDemarche;
+} else if ($countDemarcheProfspe>=1) {
+           $demarches=$etudiantsProfSpeDemarche;
+} else { 
+    $demarches=$etudiantsProfSimpleDemarche;
 }
+
+
+
+
+?>
