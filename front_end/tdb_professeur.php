@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <?php
 $title = "Tableau de Bord Professeur";
@@ -7,17 +7,14 @@ include '../includes/header.php';
 include '../middlewares/professeur.php';
 include '../back_end/show-data_gen.php';
 include '../back_end/show-data_prof.php';
+
 ?>
 
 <body>
-
-    <!-- Inclue la navbar et le tableau de bord -->
     <?php
     include '../includes/barnav.php';
     include 'tbd_gen.php';
     ?>
-
-    <!-- Affichage des stages en attente -->
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -71,7 +68,6 @@ include '../back_end/show-data_prof.php';
     </div>
     </div>
 
-    <!-- Affichage des démarches des étudiants -->
     <div class="row">
         <div class="col-md-12">
             <div class="card">

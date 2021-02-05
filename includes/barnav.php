@@ -63,6 +63,9 @@ if ($_SESSION['rank'] == "etudiant") {
               <li class="nav-link ">
                  <a  href="lister_creer_entreprises.php">Chercher une entreprise</a>
              </li>
+             <li class="nav-link ">
+                 <a  href="consult_entrprise.php">liste des entreprise</a>
+             </li>
    </ul>
     
    ';

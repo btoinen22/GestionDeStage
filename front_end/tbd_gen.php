@@ -23,7 +23,7 @@
     <div class="col-md-4">
         <div class="card stat-card">
               <div class="card-body">
-                                <h5 class="card-title"><a href="../front_end/etudiant_stage.php">Etudiants avec Stage </a><?php echo($countEtudiantStage['ID_ETUDIANT']) ?></h5> <!--Nombre d'etudiant ayant un stage -->
+                                <h5 class="card-title">Etudiants avec Stage</h5>
                                 <h2 class="float-right"><?php echo ($countEtudiantStage ." / ". $countEtudiants); ?></h2>
                                 <?php $percent = $countEtudiantStage / $countEtudiants * 100 ;?>
                                 <div class="progress" style="height: 10px;">
