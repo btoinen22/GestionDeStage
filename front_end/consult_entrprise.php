@@ -38,9 +38,9 @@
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
                                         <?php foreach ( $consult as $consult) { 
-                            if ('REFUS_ANNEESIO1'||'REFUS_ANNEE_SIO2'==1){
+                            if ($consult['REFUS_ANNEESIO1']|| $consult['REFUS_ANNEE_SIO2']==1){
                             echo' 
-                                     <tr class=text-danger>
+                                     <tr class="table-danger">
                                          <td>'. $consult[ 'NOM_ENTREPRISE'].'</td>
                                          <td>'. $consult[ 'ADRESSE_ENTREPRISE'].'</td>
                                          <td>'. $consult[ 'CP_ENTREPRISE'].'</td>
@@ -54,7 +54,7 @@
                           }
                             else {
                                  echo'
-                                <tr class=text-body>  
+                                <tr >  
                                     <td>'. $consult[ 'NOM_ENTREPRISE'].'</td>
                                     <td>'. $consult[ 'ADRESSE_ENTREPRISE'].'</td>
                                     <td>'. $consult[ 'CP_ENTREPRISE'].'</td>
