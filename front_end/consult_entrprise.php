@@ -29,7 +29,7 @@
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Refus 1er anner</th>
                                                 <th scope="col">Refus 2e année</th>
-                                                                                      
+                                                <th scope="col">action</th>                                     
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -72,5 +72,5 @@
                           ?>
                          </tbody>       
                         </table>
-            
+
             </div>
