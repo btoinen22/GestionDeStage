@@ -1,6 +1,8 @@
 <?php
 include_once "../back_end/db.php";
-include "../middlewares/professeur.php";
+// include "../middlewares/professeur.php";
+// Même problème que sur accepter_stage
+// Il faut inclure le middleware prof pour éviter un changement par un utilisateur non connecté mais impossible de modifier si je middleware est inclus ???
 
 $id_stage = $_GET['id'];
 
