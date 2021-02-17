@@ -11,7 +11,7 @@
     
     <h2 class="navbar-brand nav-link" >
       <a
-        href="tdb_professeur.php">
+        href="/front_end/tdb_professeur.php">
            iStage  pour les  professeurs. 
       </a>
     </h2>
@@ -23,10 +23,10 @@
 
               <ul class="dropdown-menu">
                   <li>
-                  <a href="lister_entreprises.php?classe=SIO1"> BTS SIO1</a>
+                  <a href="/front_end/lister_entreprises.php?classe=SIO1"> BTS SIO1</a>
                   </li>
                   <li>
-                  <a href="lister_entreprises.php?classe=SIO2"> BTS SIO2</a>
+                  <a href="/front_end/lister_entreprises.php?classe=SIO2"> BTS SIO2</a>
                   </li>
               </ul>
        </li>
@@ -37,10 +37,10 @@
 
               <ul class="dropdown-menu">
                   <li>
-                  <a href="emettre_voeux.php"> émettre des voeux de visites</a>
+                  <a href="/front_end/emettre_voeux.php"> émettre des voeux de visites</a>
                   </li>
                   <li>
-                  <a href="afficher_visites.php"> afficher les visites fixées</a>
+                  <a href="/front_end/afficher_visites.php"> afficher les visites fixées</a>
                   </li>
               </ul>  
         </li>
@@ -52,19 +52,19 @@
     echo '
        <h2 class="navbar-brand nav-link" >
        <a
-         href="tdb_etudiant.php">
+         href="/front_end/tdb_etudiant.php">
             iStage  pour les  étudiants. 
        </a>
      </h2>
     <ul class=" collapse navbar-collapse">
              <li class="nav-link ">
-              <a  href="lister_demarches.php">Actualiser/créer tes démarches</a>
+              <a  href="/front_end/lister_demarches.php">Actualiser/créer tes démarches</a>
               </li>
               <li class="nav-link ">
-                 <a  href="lister_creer_entreprises.php">Chercher une entreprise</a>
+                 <a  href="/front_end/lister_creer_entreprises.php">Chercher une entreprise</a>
              </li>
              <li class="nav-link ">
-                 <a  href="consult_entrprise.php">liste des entreprise</a>
+                 <a  href="/front_end/consult_entrprise.php">liste des entreprise</a>
              </li>
    </ul>
     
@@ -85,12 +85,12 @@
       </a>
       <ul class="dropdown-menu">
         <li>
-          <a class="dropdown-item" href="../front_end/profil.php">
+          <a class="dropdown-item" href="/front_end/profil.php">
             <i class="fad fa-user mr-3"></i>
             Mon Profil
           </a>
         </li>
-        <li><a class="dropdown-item" href="../front_end/deconnexion.php">
+        <li><a class="dropdown-item" href="/front_end/deconnexion.php">
             <i class="fad fa-sign-out mr-3"></i>
             Se déconnecter
           </a>

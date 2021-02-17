@@ -28,15 +28,15 @@ session_start();
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-    <link href="../assets/fonts/all.css" rel="stylesheet">
+    <link href="/assets/fonts/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
-    <link href="../assets/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="/assets/plugins/toastr/toastr.min.css" rel="stylesheet">
 
 
     <!-- Theme Styles -->
-    <link href="../assets/css/custom.css" rel="stylesheet">
-    <link href="../assets/css/lime.min.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet">
+    <link href="/assets/css/lime.min.css" rel="stylesheet">
 
 
 </head>
