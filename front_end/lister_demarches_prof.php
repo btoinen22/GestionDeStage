@@ -6,6 +6,7 @@
 <html lang="fr">
 
 <?php
+$title = "Démarches d'un étudiant";
 include '../includes/header.php';
 include '../middlewares/professeur.php';
 include '../back_end/show-dem-prof.php';
@@ -13,8 +14,6 @@ include '../back_end/show-dem-prof.php';
 $d = demarches($_GET["id"], $db);
 $demarches = $d[0];
 $etudiant = $d[1][0];
-$title = "Démarches de " . $etudiant; // Buggé, à réparer
-
 ?>
 
 <body>
@@ -32,11 +31,10 @@ $title = "Démarches de " . $etudiant; // Buggé, à réparer
                   <th scope="col">Date démarche</th>
                   <th scope="col">Nom entreprise</th>
                   <th scope="col">Ville entreprise</th>
-                  <th scope="col">nom du contact</th>
-                  <th scope="col">tel du contact</th>
-                  <th scope="col">moyen de communication</th>
-                  <th scope="col">commentaire</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col">Nom du contact</th>
+                  <th scope="col">Tel du contact</th>
+                  <th scope="col">Moyen de communication</th>
+                  <th scope="col">Commentaire</th>
                 </tr>
               </thead>
               <tbody>
@@ -53,9 +51,6 @@ $title = "Démarches de " . $etudiant; // Buggé, à réparer
                                         <td>' . $row['TEL_SALARIE'] . '</td>
                                         <td>' . $row['LIBELLE_MOYEN'] . '</td>
                                         <td>' . $row['COMMENTAIRE'] . '</td>
-                                        <td>
-                                            <a href="creer_demarche.php?id=' . $row['ID_ENTREPRISE'] . '" <span class="badge badge-success">Actualiser</span></a>
-                                        </td>
                                     </tr> 
                                 ';
                 } ?>
