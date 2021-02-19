@@ -23,10 +23,10 @@
 
               <ul class="dropdown-menu">
                   <li>
-                  <a href="/front_end/lister_entreprises.php?classe=SIO1"> BTS SIO1</a>
+                  <a href="/front_end/lister_entrprises.php?classe=SIO1"> BTS SIO1</a>
                   </li>
                   <li>
-                  <a href="/front_end/lister_entreprises.php?classe=SIO2"> BTS SIO2</a>
+                  <a href="/front_end/lister_entrprises.php?classe=SIO2"> BTS SIO2</a>
                   </li>
               </ul>
        </li>
