@@ -1,4 +1,5 @@
 <?php
+
 /**
  * NR le 24/12/2020
  * ce fichier permet de 
@@ -10,12 +11,12 @@
 // protection de la connexion par une exception pour afficher à l'utilisateur 
 // un message d'erreur si la connexion n'a pas réussi n'a pas réussi
 try {
-    $db = new PDO('mysql:host=localhost; dbname=aps2; port=3306', 'root', '');
+    $db = new PDO('mysql:host=localhost; dbname=aps2; port=3306; charset=UTF8', 'root', '');
 }
 // si la connexion à la BDR n'a pas été effectuée , 
 //Avertissement de l'utilisateur cybersécurité???
-catch(Exception $e) {
-    die('Erreur '.$e->getMessage());
+catch (Exception $e) {
+    die('Erreur ' . $e->getMessage());
 }
 
 /**
@@ -52,4 +53,3 @@ function sql_fetch_column(string $query, array $params = [], $column = 0)
     $stmt = sql_execute($query, $params);
     return $stmt->fetchColumn($column);
 }
-
