@@ -107,16 +107,6 @@ include '../back_end/show-data_prof.php';
             </div>
         </div>
     </div>
-    <div class="lime-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="footer-text">2020 © iStage</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <?php include '../includes/footer.php' ?>
 </body>
 
