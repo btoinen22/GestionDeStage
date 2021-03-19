@@ -12,7 +12,7 @@
     ?>
 
 <body>
-
+<!--Page plus bonne identique a page lister_creer_entreprise-->
     <?php 
     include '../includes/barnav.php'; 
     ?>
@@ -37,6 +37,7 @@
                                         et affichages des caractéristiques trouvées
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
+                                       <!-- la class="table danger"permet de mettre en rouge les ligne quand la valeur est une fois a 1 ,entreprise ne prend plus de stagiaire-->
                                         <?php foreach ( $consult as $consult) { 
                             if ($consult['REFUS_ANNEESIO1']|| $consult['REFUS_ANNEE_SIO2']==1){
                             echo' 
