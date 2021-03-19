@@ -63,7 +63,6 @@ require '../back_end/show_data_gen.php';
                                                     </td>
                                                 </tr> 
                                                 ';
-        
                                                 } else {
                                                             echo '
                                                   <tr>
@@ -75,9 +74,7 @@ require '../back_end/show_data_gen.php';
                                                     <td></td>
                                                   </tr> 
                                                   ';
-        
                                                 }
-    
                                             } ?>
                                         </tbody>
                                     </table>

@@ -78,7 +78,6 @@
                                                     <td>'. $row['prenom'] .'</td>
                                                 </tr>
                                                 ';
-                                    
                                         } ?>
                                         </tbody>
                                     </table>
@@ -101,7 +100,6 @@
                                                     <td>'. $row['prenom'] .'</td>
                                                 </tr>
                                                 ';
-                                    
                                         } ?>
                                         </tbody>
                                     </table>

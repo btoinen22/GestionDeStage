@@ -52,7 +52,6 @@
                                          <td>'. $consult[ 'REFUS_ANNEE_SIO2'].'</td>
                                       </tr> 
                          ';
-        
                                             } else {
                                                         echo'
                                 <tr >  
@@ -67,9 +66,7 @@
                                     
                                 </tr>
                             ';
-        
                                             }
-    
                                         }
                           
                           

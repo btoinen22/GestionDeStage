@@ -40,7 +40,6 @@
                                          <td>'. $stage['ETAT'].'</td>
                                       </tr> 
                          ';
-    
                                         } ?><!--recherche des element dans la base de donner-->
                          </tbody>       
                         </table>
@@ -69,7 +68,6 @@
                                          <td>'. $nstage['ETAT'].'</td>
                                       </tr> 
                          ';
-    
                                         } ?><!--parcours des element dans la bdd-->
                          </tbody>       
                         </table>

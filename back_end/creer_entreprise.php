@@ -5,7 +5,6 @@
  **/
 // Vérification que l'utilisateur a bien saisi les informations attendues
 if (isset($_POST['creer_entreprise'])) {
-
     // Controles des saisies, ne retourne rien si la saisie n'est pas correcte
     $nom = saisieGenerique($_POST['nom']);
     $adresse = saisieGenerique($_POST['adresse']);

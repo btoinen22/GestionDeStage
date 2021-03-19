@@ -59,7 +59,6 @@ $nomEtudiant = $requete[1]["PRENOM_ETUDIANT"] . " " . $requete[1]["NOM_ETUDIANT"
                                         </td>
                                     </tr> 
                                 ';
-                
                                 } ?>
                             </tbody>
                         </table>

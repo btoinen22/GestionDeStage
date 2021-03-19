@@ -3,13 +3,11 @@
 
 <?php
     $title = "contact entreprise";
-    // inclusion des fichiers hedaer, tt du type d'utilisateur
+// inclusion des fichiers hedaer, tt du type d'utilisateur
     include '../includes/header.php';
-   include '../middlewares/etudiant.php';
-   
-   
-   include_once '../back_end/recherche_entreprise.php';
-   include_once '../back_end/creer_contact.php';
+include '../middlewares/etudiant.php';
+include_once '../back_end/recherche_entreprise.php';
+include_once '../back_end/creer_contact.php';
 ?>
 
 <body>
@@ -27,8 +25,8 @@
                                     <div class="mt-4">
 
                                         <?php if (isset($success)) {
-        echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-    } ?>
+                                            echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
+                                        } ?>
                                     </div>
 
                                         <div class="card">
@@ -40,8 +38,8 @@
                                                 <p class="card-text">Teléphone : <?php echo $entreprise['TEL_ENTREPRISE'];?></p>
                                                 <p class="card-text"> Courriel : <?php echo $entreprise['EMAIL_ENTREPRISE'];?></p>
                                                 <p class="card-text">  <?php if ($entreprise['REFUS_ANNEESIO1']==1) {
-        echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';
-    }?>
+                                                    echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';
+                                                                       }?>
                                             </div>
                                         </div> 
                                         <form method="POST" id="creer_contact" name="creer_contact" class="mt-4">

@@ -59,7 +59,6 @@
                                         echo '
                                     <p class="text-'.$color.'">'.$message.'</p>
                                     ';
-    
                                     }
                                     ?>
                                 </div>
@@ -94,7 +93,6 @@
                                         echo '
                                     <p class="text-'.$colorMdp.'">'.$messageMdp.'</p>
                                     ';
-                                
                                     }
                                     ?>
                                 </div>

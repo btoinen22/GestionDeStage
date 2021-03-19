@@ -57,7 +57,6 @@ require '../back_end/show_data_prof.php';
                                                     </td>
                                                 </tr> 
                                                 ';
-                                
                                 } ?>
                             </tbody>
                         </table>
@@ -100,7 +99,6 @@ require '../back_end/show_data_prof.php';
                                             </a>                                      
                                          </td>
                                       </tr>';
-                                
                                 } ?>
                             </tbody>
                         </table>

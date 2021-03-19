@@ -17,13 +17,10 @@
                   <div class="row">
                    <h2> Tu as trouvé un stage! RDV en juin , là où tu sais!</h2>
                    </div>';
-             
         } elseif ($countDemarches >0) {
                  include 'lister_dern_dem_et.php';
-             
         } else {
                      include 'lister_dern_entreprise.php';
-                 
         }
         ?>
 <?php require '../includes/footer.php' ?>

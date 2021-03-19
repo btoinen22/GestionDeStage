@@ -46,7 +46,6 @@
         </li>
   </ul>
   ';
-  
   }
   //  affichage des fonctionnalités accessibles aux étudiants
   if ($_SESSION['rank'] == "etudiant") {
@@ -70,7 +69,6 @@
    </ul>
     
    ';
-  
   }
     ?>
   <!--   NR le 24/12/2020

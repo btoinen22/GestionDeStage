@@ -2,12 +2,10 @@
 <html lang="en">
 <?php
     $title = "Créer une nouvelle demarche si l'entreprise existe";
-
-    include_once '../includes/header.php';
-    include_once '../middlewares/etudiant.php';
-
-    include_once '../back_end/recherche_entreprise.php';
-    include_once '../back_end/creer_demarche.php';
+include_once '../includes/header.php';
+include_once '../middlewares/etudiant.php';
+include_once '../back_end/recherche_entreprise.php';
+include_once '../back_end/creer_demarche.php';
 ?>
 
 <body>
@@ -25,8 +23,8 @@
                                 <div class="mt-4">
 
                                     <?php if (isset($success)) {
-    echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-} ?>
+                                        echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
+                                    } ?>
                                 </div>
 
                                 <div class="card">
@@ -38,8 +36,8 @@
                                     <p class="card-text">Teléphone : <?php echo $entreprise['TEL_ENTREPRISE'];?></p>
                                     <p class="card-text"> Courriel : <?php echo $entreprise['EMAIL_ENTREPRISE'];?></p>
                                     <p class="card-text">  <?php if ($entreprise['REFUS_ANNEESIO1']==1) {
-    echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';
-}?>
+                                        echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';
+                                                           }?>
                                     </div>
                                     <button type="button" name="stop_demarche" id="stop_demarche"
                                             class="btn btn-block btn-danger btn-lg"><a href="../back_end/stop_demarche.php?id=<?php echo $id?>">Stop Démarche</a></button>
@@ -54,7 +52,7 @@
                                         <select   name="id_contact" id="id_contact"  required  >
                                         <?php foreach ($contacts as $contact) { ?> 
                                              <option value="<?php echo $contact['ID_SALARIE']?>"><?php echo $contact['PRENOM_SALARIE'].' '.$contact['NOM_SALARIE'].', Tél :  '.$contact['TEL_SALARIE'].', Courriel :  '.$contact['EMAIL_SALARIE'] ?></option>
-                                           <?php } ?> 
+                                        <?php } ?> 
                                         </select>
                                     </div>
                                     <div class="form-group">

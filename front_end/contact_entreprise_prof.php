@@ -34,7 +34,6 @@
 
                                     <?php if (isset($success)) {
                                         echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-    
                                     } ?>
                                 </div>
                                 <div class="card">

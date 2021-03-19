@@ -30,17 +30,14 @@ $type = $_GET['type'];
                                 <h4>Bienvenue sur iStage ! <br> Connexion en tant que
                                     <?php if ($_GET['type'] == "professeur") {
                                         echo 'professeur.';
-
                                     } elseif ($_GET['type'] == "etudiant") {
                                         echo 'étudiant.';
-
                                     } ?></h4>
                                 <h6 class="font-weight-light">Veuillez saisir vos identifiant et mot de passe et </h6>
                                 <?php if ($show == true) {
                                     echo '
                                     <p class="mt-3 text-' . $color . '">' . $message . '</p>
                                     ';
-
                                 }
                                 ?>
                                 <!--   NR le 24/12/2020

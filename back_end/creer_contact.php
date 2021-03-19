@@ -1,6 +1,5 @@
 <?php
 if (isset($_POST['creer_contact'])) {
-
     // Controle des saisies, ne retourne rien si la saisie n'est pas correcte
     $nom = saisieGenerique($_POST['nom']);
     $prenom = saisieGenerique($_POST['prenom']);
@@ -10,7 +9,6 @@ if (isset($_POST['creer_contact'])) {
     if (!empty($nom) && !empty($prenom)
         && !empty($tel) && !empty($email)
     ) {
-
         // préparation de l'enregistrement du contact avec les valeurs saisies
         $query = "INSERT INTO SALARIE (ID_ENTREPRISE,NOM_SALARIE,PRENOM_SALARIE,
         TEL_SALARIE,EMAIL_SALARIE) VALUES (:id,:nom,:prenom,:tel,:email);";

@@ -18,4 +18,4 @@ WHERE etudiant.ID_ETUDIANT=stage.ID_ETUDIANT AND ETAT='AT';"
 $resultat->execute();
 // lecture de la première ligne du jeu d'enregistrements
 $nstage = $resultat->fetchAll();
-?>
+

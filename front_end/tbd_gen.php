@@ -11,10 +11,8 @@
                                     echo '
                                         <p>Cette application permet de réaliser le suivi des recherches de stage,l\'attribution des stages et les visites de stage.</p>
                                         <p>Elle recense tous les étudiants et toutes les entreprises pouvant acceuillir des stagiaires.</p>';
-
                                 } else {
                                     echo ' <p>Retrouve  les entreprises pouvant accueuillir des stagiaires et enregistre tes démarches.</p>';
-
                                 }?>
                             </div>
                             <div class="info-image col-md-6"></div>

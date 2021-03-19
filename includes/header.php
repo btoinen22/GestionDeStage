@@ -23,7 +23,6 @@ session_start();
     <!-- Title -->
     <title><?php if (isset($title)) {
         echo($title);
-
            } ?>
          - iStage
     </title>
