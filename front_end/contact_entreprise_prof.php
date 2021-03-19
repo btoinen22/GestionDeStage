@@ -20,7 +20,7 @@
 
 <body>
     <?php
-    include '../includes/barnav.php';
+    require '../includes/barnav.php';
     ?>
     <div class="lime-container">
         <div class="lime-body">
@@ -33,8 +33,9 @@
                                 <div class="mt-4">
 
                                     <?php if (isset($success)) {
-        echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-    } ?>
+                                        echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
+    
+                                    } ?>
                                 </div>
                                 <div class="card">
                                     <!-- Présentation a retravailler ? -->
@@ -86,6 +87,6 @@
         </div>
     </div>
 
-<?php include '../includes/footer.php' ?>
+<?php require '../includes/footer.php' ?>
 </body>
 </html>

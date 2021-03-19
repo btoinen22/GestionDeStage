@@ -7,8 +7,7 @@ if (isset($_POST['creer_contact'])) {
     $tel = saisieNumTel($_POST['tel']);
     $email = saisieMail($_POST['email']);
 
-    if (
-        !empty($nom) && !empty($prenom)
+    if (!empty($nom) && !empty($prenom)
         && !empty($tel) && !empty($email)
     ) {
 

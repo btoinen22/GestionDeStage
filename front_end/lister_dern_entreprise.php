@@ -26,7 +26,7 @@
                             et affichages des caractéristiques trouvées
                             dont le nombre de démarches effectuées auprès de l'entreprises-->
                         <?php foreach ($entreprisesAvecNbDem as $row) {
-    echo' 
+                            echo' 
                                      <tr>
                                          <td>'. $row[ 'ID_ENTREPRISE'].'</td>
                                          <td>'. $row['NOM_ENTREPRISE'].'</td>
@@ -38,7 +38,8 @@
                                          </td>
                                       </tr> 
                          ';
-} ?>
+
+                        } ?>
                         </tbody>
                     </table>
                 </div>

@@ -33,6 +33,7 @@ function demarches($id_etudiant, $db)
     $etudiant = $stmt->fetchAll(PDO::FETCH_BOTH)[0];
 
     return [$demarches, $etudiant];
+
 }
 
 function demarcheSpecifique($id_demarche, $id_etudiant, $db)
@@ -67,5 +68,6 @@ function demarcheSpecifique($id_demarche, $id_etudiant, $db)
     // Retourne un array qui contient a la fois les données de l'étudiant et les données de la démarche
     // Possibilité de simplifier ?
     return [$demarcheSpe, $etudiant];
+
 }
 ?>

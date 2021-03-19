@@ -8,8 +8,8 @@
 
 <?php
 $title = "Connexion";
-include '../includes/header.php';
-include '../back_end/connexion.php';
+require '../includes/header.php';
+require '../back_end/connexion.php';
 $type = $_GET['type'];
 ?>
 
@@ -29,16 +29,19 @@ $type = $_GET['type'];
                                 -->
                                 <h4>Bienvenue sur iStage ! <br> Connexion en tant que
                                     <?php if ($_GET['type'] == "professeur") {
-    echo 'professeur.';
-} elseif ($_GET['type'] == "etudiant") {
-    echo 'étudiant.';
-} ?></h4>
+                                        echo 'professeur.';
+
+                                    } elseif ($_GET['type'] == "etudiant") {
+                                        echo 'étudiant.';
+
+                                    } ?></h4>
                                 <h6 class="font-weight-light">Veuillez saisir vos identifiant et mot de passe et </h6>
                                 <?php if ($show == true) {
-    echo '
+                                    echo '
                                     <p class="mt-3 text-' . $color . '">' . $message . '</p>
                                     ';
-}
+
+                                }
                                 ?>
                                 <!--   NR le 24/12/2020
                                 //  formulaire de saisie des informations nécessaires à la connexion
@@ -65,7 +68,7 @@ $type = $_GET['type'];
         </div>
     </div>
 
-    <?php include '../includes/footer.php' ?>
+    <?php require '../includes/footer.php' ?>
 
 </body>
 

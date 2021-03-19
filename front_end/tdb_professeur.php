@@ -3,17 +3,17 @@
 
 <?php
 $title = "Tableau de Bord Professeur";
-include '../includes/header.php';
-include '../middlewares/professeur.php';
-include '../back_end/show_data_gen.php';
-include '../back_end/show_data_prof.php';
+require '../includes/header.php';
+require '../middlewares/professeur.php';
+require '../back_end/show_data_gen.php';
+require '../back_end/show_data_prof.php';
 
 ?>
 
 <body>
     <?php
-    include '../includes/barnav.php';
-    include 'tbd_gen.php';
+    require '../includes/barnav.php';
+    require 'tbd_gen.php';
     ?>
     <div class="row">
         <div class="col-md-12">
@@ -57,6 +57,7 @@ include '../back_end/show_data_prof.php';
                                                     </td>
                                                 </tr> 
                                                 ';
+                                
                                 } ?>
                             </tbody>
                         </table>
@@ -99,6 +100,7 @@ include '../back_end/show_data_prof.php';
                                             </a>                                      
                                          </td>
                                       </tr>';
+                                
                                 } ?>
                             </tbody>
                         </table>
@@ -107,7 +109,7 @@ include '../back_end/show_data_prof.php';
             </div>
         </div>
     </div>
-    <?php include '../includes/footer.php' ?>
+    <?php require '../includes/footer.php' ?>
 </body>
 
 </html>

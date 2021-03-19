@@ -46,6 +46,7 @@
         </li>
   </ul>
   ';
+  
   }
   //  affichage des fonctionnalités accessibles aux étudiants
   if ($_SESSION['rank'] == "etudiant") {
@@ -69,8 +70,9 @@
    </ul>
     
    ';
+  
   }
-  ?>
+    ?>
   <!--   NR le 24/12/2020
 //  affichage de la barre de navigation commune aux étudiants et professeurs
 //  affichage des éléments d'identification et de la possibilité de les consulter 

@@ -4,14 +4,14 @@
 
 <?php
 $title = "Actualiser les démarches ";
-include '../includes/header.php';
-include '../middlewares/etudiant.php';
-include '../back_end/show_data_etudiant.php';
+require '../includes/header.php';
+require '../middlewares/etudiant.php';
+require '../back_end/show_data_etudiant.php';
 ?>
 
 <body>
-    <?php include '../includes/barnav.php';
-    include 'lister_dern_dem_et.php'; ?>
+    <?php require '../includes/barnav.php';
+    require 'lister_dern_dem_et.php'; ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -22,6 +22,6 @@ include '../back_end/show_data_etudiant.php';
             </div>
         </div>
     </div>
-<?php include '../includes/footer.php' ?>
+<?php require '../includes/footer.php' ?>
 </body>
 </html>

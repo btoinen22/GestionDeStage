@@ -3,14 +3,14 @@
 
 <?php
     $title = "Mon profil";
-    include '../includes/header.php';
-    include '../middlewares/etudiant.php';
-    include '../back_end/modifier_profil.php';
-    include '../back_end/show_data_gen.php';
-    ?>
+    require '../includes/header.php';
+    require '../middlewares/etudiant.php';
+    require '../back_end/modifier_profil.php';
+    require '../back_end/show_data_gen.php';
+?>
 
 <body>
-    <?php include '../includes/barnav.php'; ?>
+    <?php require '../includes/barnav.php'; ?>
 
 
     <div class="lime-container">
@@ -56,11 +56,12 @@
                                 </form>
                                 <div class="mt-4">
                                     <?php if ($show == true) {
-        echo '
+                                        echo '
                                     <p class="text-'.$color.'">'.$message.'</p>
                                     ';
-    }
-                                ?>
+    
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -90,11 +91,12 @@
                                 </form>
                                 <div class="mt-4">
                                     <?php if ($showMdp == true) {
-                                    echo '
+                                        echo '
                                     <p class="text-'.$colorMdp.'">'.$messageMdp.'</p>
                                     ';
-                                }
-                                ?>
+                                
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -102,6 +104,6 @@
                 </div>
             </div>
         </div>
-<?php include '../includes/footer.php' ?>
+<?php require '../includes/footer.php' ?>
 </body>
 </html>

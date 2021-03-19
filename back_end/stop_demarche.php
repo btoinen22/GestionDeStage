@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php';
+require_once 'db.php';
 
 
 //récupération de l'id de l'etudiant

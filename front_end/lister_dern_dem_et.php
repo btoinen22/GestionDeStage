@@ -28,8 +28,8 @@
                         <!-- parcours des démarches issues de la BDR
                             et affichages des caractéristiques trouvées-->
                             <?php
-                                 foreach ($demarches as $row) {
-                                     echo ' 
+                            foreach ($demarches as $row) {
+                                echo ' 
                                     <tr>
                                         <td>'. join('-', array_reverse(explode('-', substr($row['DATE_DEMARCHE'], 0, 10)))).'</td>
                                         <td>'. $row['NOM_ENTREPRISE'].'</td>
@@ -43,7 +43,8 @@
                                         </td>
                                     </tr> 
                                 ';
-                                 } ?>
+                                 
+                            } ?>
                         </tbody>
                     </table>
                  </div>

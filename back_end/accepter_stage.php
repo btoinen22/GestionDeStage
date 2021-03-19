@@ -1,7 +1,7 @@
 <?php
-include_once "../back_end/db.php";
+require_once "../back_end/db.php";
 session_start(); // Obligatoire car on inclue pas le header qui initialise normalement la session
-include "../middlewares/professeur.php";
+require "../middlewares/professeur.php";
 
 $id_stage = $_GET['id'];
 

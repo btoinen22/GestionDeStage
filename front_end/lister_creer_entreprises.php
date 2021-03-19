@@ -9,17 +9,17 @@
 <?php
 $title = "Liste des Entreprises";
 // inclusion des fichiers hedaer, tt du type d'utilisateur
-include '../includes/header.php';
-include '../middlewares/etudiant.php';
+require '../includes/header.php';
+require '../middlewares/etudiant.php';
 // inclusion des fichiers de traitements de données
-include '../back_end/lister_entreprises.php';
-include '../back_end/show_data_gen.php';
+require '../back_end/lister_entreprises.php';
+require '../back_end/show_data_gen.php';
 ?>
 
 <body>
 
     <?php
-    include '../includes/barnav.php';
+    require '../includes/barnav.php';
     ?>
 
     <div class="lime-container">
@@ -49,8 +49,8 @@ include '../back_end/show_data_gen.php';
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
                                             <?php foreach ($entreprisesAvecNbDem as $row) {
-        if ($row['REFUS_ANNEESIO1'] == 0) {
-            echo '
+                                                if ($row['REFUS_ANNEESIO1'] == 0) {
+                                                    echo '
                                                   <tr>
                                                     <td>' . escape($row['NOM_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['VILLE_ENTREPRISE']) . '</td>
@@ -63,8 +63,9 @@ include '../back_end/show_data_gen.php';
                                                     </td>
                                                 </tr> 
                                                 ';
-        } else {
-            echo '
+        
+                                                } else {
+                                                            echo '
                                                   <tr>
                                                     <td>' . escape($row['NOM_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['VILLE_ENTREPRISE']) . '</td>
@@ -74,8 +75,10 @@ include '../back_end/show_data_gen.php';
                                                     <td></td>
                                                   </tr> 
                                                   ';
-        }
-    } ?>
+        
+                                                }
+    
+                                            } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -92,6 +95,6 @@ include '../back_end/show_data_gen.php';
                 </div>
             </div>
         </div>
-<?php include '../includes/footer.php' ?>
+<?php require '../includes/footer.php' ?>
 </body>
 </html>
