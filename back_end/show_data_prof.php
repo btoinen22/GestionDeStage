@@ -11,7 +11,7 @@
 $id_courant = $_SESSION['id'];
 
 
-// Recherche des stages en attente (en cas de refus d'un stage) dans la même spécialité  
+// Recherche des stages en attente (en cas de refus d'un stage) dans la même spécialité
 // que celle du professeur connecté s'il est professeur de spécialité
 $stmt = $db->prepare(
     "SELECT ID_STAGE,DATE_FIN,DATE_DEBUT, NOM_ETUDIANT,
@@ -30,7 +30,7 @@ $stmt->execute();
 $stageAttente = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countStageAttente = count($stageAttente);
 
-// Recherche des démarches effectuées par les étudiants de BTS SIO1  
+// Recherche des démarches effectuées par les étudiants de BTS SIO1
 // pour le professeur de référence de la classe (Prof principal)
 $stmt = $db->prepare(
     "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,etudiant.ID_ETUDIANT AS ID,COUNT(ID_DEMARCHE)  AS NB_DEM  
@@ -46,7 +46,7 @@ $etudiantsProfRefDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfref = count($etudiantsProfRefDemarche);
 
 // Recherche des démarches effectuées par les étudiants de BTS SIO1
-// décompte des démarches effectuées par chaque étudiant 
+// décompte des démarches effectuées par chaque étudiant
 // pour un professeur de spécialité
 $stmt = $db->prepare(
     "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,etudiant.ID_ETUDIANT AS ID,COUNT(ID_DEMARCHE)  AS NB_DEM  
@@ -82,7 +82,7 @@ $countDemarcheProfsimple = count($etudiantsProfSimpleDemarche);
 // Conservation des démarches non nulles selon le type du professeur
 if ($countDemarcheProfref >= 1) {
     $demarches = $etudiantsProfRefDemarche;
-} else if ($countDemarcheProfspe >= 1) {
+} elseif ($countDemarcheProfspe >= 1) {
     $demarches = $etudiantsProfSpeDemarche;
 } else {
     $demarches = $etudiantsProfSimpleDemarche;

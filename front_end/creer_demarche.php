@@ -24,9 +24,9 @@
                                 <h5 class="card-title">Nouvelle demarche si l'entreprise existe</h5>
                                 <div class="mt-4">
 
-                                    <?php if(isset($success)) {
-                                    echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-                                      } ?>
+                                    <?php if (isset($success)) {
+    echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
+} ?>
                                 </div>
 
                                 <div class="card">
@@ -37,7 +37,9 @@
                                     <p class="card-text"><?php echo $entreprise['CP_ENTREPRISE'].' '.$entreprise['VILLE_ENTREPRISE'];?></p>
                                     <p class="card-text">Teléphone : <?php echo $entreprise['TEL_ENTREPRISE'];?></p>
                                     <p class="card-text"> Courriel : <?php echo $entreprise['EMAIL_ENTREPRISE'];?></p>
-                                    <p class="card-text">  <?php if ($entreprise['REFUS_ANNEESIO1']==1 ) echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';?>
+                                    <p class="card-text">  <?php if ($entreprise['REFUS_ANNEESIO1']==1) {
+    echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';
+}?>
                                     </div>
                                     <button type="button" name="stop_demarche" id="stop_demarche"
                                             class="btn btn-block btn-danger btn-lg"><a href="../back_end/stop_demarche.php?id=<?php echo $id?>">Stop Démarche</a></button>

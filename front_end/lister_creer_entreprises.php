@@ -11,7 +11,7 @@ $title = "Liste des Entreprises";
 // inclusion des fichiers hedaer, tt du type d'utilisateur
 include '../includes/header.php';
 include '../middlewares/etudiant.php';
-// inclusion des fichiers de traitements de données   
+// inclusion des fichiers de traitements de données
 include '../back_end/lister_entreprises.php';
 include '../back_end/show_data_gen.php';
 ?>
@@ -49,8 +49,8 @@ include '../back_end/show_data_gen.php';
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
                                             <?php foreach ($entreprisesAvecNbDem as $row) {
-                                                if ($row['REFUS_ANNEESIO1'] == 0)
-                                                    echo '
+        if ($row['REFUS_ANNEESIO1'] == 0) {
+            echo '
                                                   <tr>
                                                     <td>' . escape($row['NOM_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['VILLE_ENTREPRISE']) . '</td>
@@ -63,8 +63,8 @@ include '../back_end/show_data_gen.php';
                                                     </td>
                                                 </tr> 
                                                 ';
-                                                else
-                                                    echo '
+        } else {
+            echo '
                                                   <tr>
                                                     <td>' . escape($row['NOM_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['VILLE_ENTREPRISE']) . '</td>
@@ -74,7 +74,8 @@ include '../back_end/show_data_gen.php';
                                                     <td></td>
                                                   </tr> 
                                                   ';
-                                            } ?>
+        }
+    } ?>
                                         </tbody>
                                     </table>
                                 </div>

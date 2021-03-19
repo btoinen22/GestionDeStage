@@ -3,9 +3,9 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
     $title = "Lobby";
-    require '../includes/header.php';    
+    require '../includes/header.php';
 ?>
 
 <body class="login-page err-500">

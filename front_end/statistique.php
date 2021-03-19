@@ -69,15 +69,16 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nom</th>
                                                 <th scope="col">Prénom</th>
-                                        <?php foreach( $non_stage as $row ) {
-                                                echo '
+                                        <?php foreach ($non_stage as $row) {
+                                        echo '
                                             <tbody>
                                                 <tr>
                                                     <td>'. $row['id'] .'</td>
                                                     <td>'. $row['nom'] .'</td>
                                                     <td>'. $row['prenom'] .'</td>
                                                 </tr>
-                                                '; } ?>
+                                                ';
+                                    } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -90,15 +91,16 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nom</th>
                                                 <th scope="col">Prénom</th>
-                                        <?php foreach( $stage as $row ) {
-                                                echo '
+                                        <?php foreach ($stage as $row) {
+                                        echo '
                                             <tbody>
                                                 <tr>
                                                     <td>'. $row['id'] .'</td>
                                                     <td>'. $row['nom'] .'</td>
                                                     <td>'. $row['prenom'] .'</td>
                                                 </tr>
-                                                '; } ?>
+                                                ';
+                                    } ?>
                                         </tbody>
                                     </table>
                                 </div>

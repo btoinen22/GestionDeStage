@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-    $title = "Mon profil";    
-    include '../includes/header.php';   
-    include '../middlewares/etudiant.php';     
-    include '../back_end/modifier_profil.php';          
-    include '../back_end/show_data_gen.php';     
+<?php
+    $title = "Mon profil";
+    include '../includes/header.php';
+    include '../middlewares/etudiant.php';
+    include '../back_end/modifier_profil.php';
+    include '../back_end/show_data_gen.php';
     ?>
 
 <body>
@@ -55,10 +55,11 @@
                                         class="btn btn-primary">Modifier</button>
                                 </form>
                                 <div class="mt-4">
-                                    <?php if($show == true) { 
-                                    echo '
+                                    <?php if ($show == true) {
+        echo '
                                     <p class="text-'.$color.'">'.$message.'</p>
-                                    ';} 
+                                    ';
+    }
                                 ?>
                                 </div>
                             </div>
@@ -88,10 +89,11 @@
                                         class="btn btn-primary">Modifier</button>
                                 </form>
                                 <div class="mt-4">
-                                    <?php if($showMdp == true) { 
+                                    <?php if ($showMdp == true) {
                                     echo '
                                     <p class="text-'.$colorMdp.'">'.$messageMdp.'</p>
-                                    ';} 
+                                    ';
+                                }
                                 ?>
                                 </div>
                             </div>

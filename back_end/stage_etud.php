@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $resultat = $db->prepare("SELECT NOM_ETUDIANT,PRENOM_ETUDIANT,ETAT FROM etudiant, stage 
 WHERE etudiant.ID_ETUDIANT=stage.ID_ETUDIANT AND ETAT='OK';");
@@ -7,7 +7,7 @@ $resultat->execute();
 $stage = $resultat->fetchAll();
 ?>
 
-<?php 
+<?php
 
 $resultat = $db->prepare("SELECT NOM_ETUDIANT,PRENOM_ETUDIANT,ETAT FROM etudiant, stage 
 WHERE etudiant.ID_ETUDIANT=stage.ID_ETUDIANT AND ETAT='AT';");

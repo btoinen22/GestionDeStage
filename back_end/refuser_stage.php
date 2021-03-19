@@ -15,4 +15,3 @@ sql_execute(
 );
 
 header('Location: ../front_end/tdb_professeur.php');
-?>

@@ -30,9 +30,9 @@
                                 <div class="mt-4">
                                             <!-- préparation de l'affichage des erreurs
                                             après soumission-->
-                                    <?php if(isset($success)) {
-                                    echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-                                }
+                                    <?php if (isset($success)) {
+    echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
+}
                                 ?>
                                 </div>
                                 <!-- affichage du formulaire :
