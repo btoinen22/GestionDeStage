@@ -12,7 +12,7 @@ $prenom=$_SESSION['prenom'];
 $email = $_SESSION['email'];
 $telephone = $_SESSION['telephone'];
 // 
-if (isset($_POST['modifier-profil'])) {
+if (isset($_POST['modifier_profil'])) {
     // Récupération des données et stockage
     $id = $_SESSION['id'];
     $nom = $_POST['nom'];

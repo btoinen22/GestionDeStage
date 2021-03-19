@@ -11,7 +11,7 @@
     $idDemarche = $_GET["dem"];
 
     // On récupère la démarche, ainsi que les données de l'étudiant a partir des IDs
-    require "../back_end/show-dem-prof.php";
+    require "../back_end/show_dem_prof.php";
     
     $requete = demarcheSpecifique($idDemarche, $idEtudiant, $db);
     $demarche = $requete[0][0];

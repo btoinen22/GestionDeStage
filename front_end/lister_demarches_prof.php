@@ -9,7 +9,7 @@
 $title = "Démarches d'un étudiant";
 include '../includes/header.php';
 include '../middlewares/professeur.php';
-include '../back_end/show-dem-prof.php';
+include '../back_end/show_dem_prof.php';
 
 // Retourne une liste de deux requêtes : la première contient les entreprises, la deuxième l'étudiant.
 // On les assigne chacun a des variables

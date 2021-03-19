@@ -5,8 +5,8 @@
     $title = "Tableau de Bord Etudiant";    
     include '../includes/header.php';   
     include '../middlewares/etudiant.php';     
-    include '../back_end/show-data_gen.php'; 
-    include '../back_end/show-data_etudiant.php';   
+    include '../back_end/show_data_gen.php'; 
+    include '../back_end/show_data_etudiant.php';   
     ?>
 
     <body>     

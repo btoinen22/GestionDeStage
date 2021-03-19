@@ -5,8 +5,8 @@
 $title = "Tableau de Bord Professeur";
 include '../includes/header.php';
 include '../middlewares/professeur.php';
-include '../back_end/show-data_gen.php';
-include '../back_end/show-data_prof.php';
+include '../back_end/show_data_gen.php';
+include '../back_end/show_data_prof.php';
 
 ?>
 
@@ -52,8 +52,8 @@ include '../back_end/show-data_prof.php';
                                                     <td>' . $row['DATE_DEBUT'] . '</td>
                                                     <td>' . $row['DATE_FIN'] . '</td>
                                                     <td>
-                                                        <a href="../back_end/accepter-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-success">Valider</span></a>
-                                                        <a href="../back_end/refuser-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-danger">Refuser</span></a>
+                                                        <a href="../back_end/accepter_stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-success">Valider</span></a>
+                                                        <a href="../back_end/refuser_stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-danger">Refuser</span></a>
                                                     </td>
                                                 </tr> 
                                                 ';

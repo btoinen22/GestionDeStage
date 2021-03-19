@@ -8,7 +8,7 @@
    include '../middlewares/etudiant.php';  
     // inclusion des fichiers de traitements de données   
     include '../back_end/consultation_entreprise.php'; 
-    include '../back_end/show-data_gen.php'; 
+    include '../back_end/show_data_gen.php'; 
     ?>
 
 <body>
