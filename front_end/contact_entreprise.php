@@ -41,7 +41,7 @@
                                                 <p class="card-text"> Courriel : <?php echo $entreprise['EMAIL_ENTREPRISE'];?></p>
                                                 <p class="card-text">  <?php if ($entreprise['REFUS_ANNEESIO1']==1 ) echo'<p> <i class="fad fa-exclamation-circle" style="color:red"></i>refus stagiaire</p>';?>
                                             </div>
-                                        </div>
+                                        </div> 
                                         <form method="POST" id="creer_contact" name="creer_contact" class="mt-4">
                                     
                                     <div class="form-group">
