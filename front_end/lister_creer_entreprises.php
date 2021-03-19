@@ -71,7 +71,9 @@ include '../back_end/show-data_gen.php';
                                                     <td>' . escape($row['TEL_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['EMAIL_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['NB_ET']) . '</td>
-                                                    <td></td>
+                                                    <td>
+                                                        <span class="badge badge-red">n accepte pas de stagiaire</span>
+                                                    </td>
                                                   </tr> 
                                                   ';
                                             } ?>
