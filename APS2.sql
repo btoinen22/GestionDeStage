@@ -300,7 +300,7 @@ ALTER TABLE SOUHAITER
   ADD FOREIGN KEY FK_SOUHAITER_STAGE (ID_STAGE)
       REFERENCES STAGE (ID_STAGE) ;
 
-INSERT INTO MOYENCOM (LIBELLE_MOYEN) VALUES ('telephone'), ('d�marchage'),('couriel'), ('entretien');
+INSERT INTO MOYENCOM (LIBELLE_MOYEN) VALUES ('telephone'), ('démarchage'),('couriel'), ('entretien');
 
 INSERT INTO SPECIALITE (ID_PROF, LIBELLE_SPECIALITE) VALUES (1,'SLAM'), (2,'SISR');
 
@@ -386,11 +386,11 @@ INSERT INTO  DEMARCHE (ID_ETUDIANT,ID_MOYEN,ID_SALARIE,DATE_DEMARCHE,COMMENTAIRE
 		 (1,4,12,'2020-09-21', 'en attente'),
 		 (2,1,1,'2020-09-21', 'en attente'),
 		 (2,2,1,'2020-09-27', 'un espoir'),
-		 (2,4,1,'2020-09-30', 'fiche recherche envoy�e'),
+		 (2,4,1,'2020-09-30', 'fiche recherche envoyée'),
 		 (2,4,5,'2020-09-30', 'un espoir'),
 		 (3,3,10,'2020-09-21', 'en attente'),
 		 (3,4,4,'2020-09-28', 'en attente'),
-		 (22,1,1,'2020-10-10','fiche recherche re�ue');
+		 (22,1,1,'2020-10-10','fiche recherche reçue');
 		 
 INSERT INTO ETRE_CONTACTER(ID_DEMARCHE,ID_SALARIE)  VALUES 
 	(1,1),(2,1),(3,1),(4,3),(5,7),(6,5),(7,2),(8,1),(9,2),(10,5),(11,10),(12,6),(22,1);

@@ -11,10 +11,10 @@
 $id_courant = $_SESSION['id'];
 
 
-// Recherche des stages non validés dans la même spécialité  
+// Recherche des stages en attente (en cas de refus d'un stage) dans la même spécialité  
 // que celle du professeur connecté s'il est professeur de spécialité
-    $stmt = $db->prepare(
-        "SELECT ID_STAGE,DATE_FIN,DATE_DEBUT, NOM_ETUDIANT,
+$stmt = $db->prepare(
+    "SELECT ID_STAGE,DATE_FIN,DATE_DEBUT, NOM_ETUDIANT,
                 PRENOM_ETUDIANT,NOM_ENTREPRISE,
                 VILLE_ENTREPRISE,NOM_SALARIE,TEL_SALARIE 
         FROM stage,entreprise,etudiant,salarie,specialite 
@@ -22,7 +22,7 @@ $id_courant = $_SESSION['id'];
                 SALARIE.ID_ENTREPRISE=ENTREPRISE.ID_ENTREPRISE AND
             STAGE.ID_ETUDIANT=ETUDIANT.ID_ETUDIANT AND 
             ETUDIANT.ID_SPECIALITE=SPECIALITE.ID_SPECIALITE AND 
-            SPECIALITE.ID_PROF=:id    AND ETAT !='OK' 
+            SPECIALITE.ID_PROF=:id    AND ETAT ='AT' 
             ORDER BY NOM_ETUDIANT DESC;"
 );
 $stmt->bindValue(':id', $id_courant, PDO::PARAM_INT);
