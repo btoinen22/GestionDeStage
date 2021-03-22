@@ -7,8 +7,6 @@
  * qui peuvent être utilisés dans toutes les pages
  * la fonction escape peut être utilisées pour éviter des injections XSS
 
-
-
  * Escape retourne la chaine de caractères avec chanement
  * des doubles quotes en simple quote
  * $date reprséente la chaine de caractères à traiter

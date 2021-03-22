@@ -9,15 +9,15 @@
 <?php
     $title = "Créer une nouvelle entreprise";
      // inclusion des fichiers hedaer, tt du type d'utilisateur
-    include_once '../includes/header.php';
-    include_once '../middlewares/etudiant.php';
+    require_once '../includes/header.php';
+    require_once '../middlewares/etudiant.php';
      // inclusion des fichiers de traitements de données
-    include_once '../back_end/creer_entreprise.php';
+    require_once '../back_end/creer_entreprise.php';
 ?>
 
 <body>
 <?php
-    include_once '../includes/barnav.php';
+    require_once '../includes/barnav.php';
 ?>
     <div class="lime-container">
         <div class="lime-body">
@@ -30,10 +30,10 @@
                                 <div class="mt-4">
                                             <!-- préparation de l'affichage des erreurs
                                             après soumission-->
-                                    <?php if(isset($success)) {
-                                    echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-                                }
-                                ?>
+                                    <?php if (isset($success)) {
+                                        echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
+                                    }
+                                    ?>
                                 </div>
                                 <!-- affichage du formulaire :
                                      - saisie des caractéristiques de lentreprise, toutes sont obligatoires
@@ -77,6 +77,6 @@
                 </div>
             </div>
         </div>
-<?php include '../includes/footer.php' ?>
+<?php require '../includes/footer.php' ?>
 </body>
 </html>

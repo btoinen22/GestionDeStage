@@ -8,8 +8,8 @@
 
 <?php
 $title = "Connexion";
-include '../includes/header.php';
-include '../back_end/connexion.php';
+require '../includes/header.php';
+require '../back_end/connexion.php';
 $type = $_GET['type'];
 ?>
 
@@ -65,7 +65,7 @@ $type = $_GET['type'];
         </div>
     </div>
 
-    <?php include '../includes/footer.php' ?>
+    <?php require '../includes/footer.php' ?>
 
 </body>
 

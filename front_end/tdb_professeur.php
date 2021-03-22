@@ -3,17 +3,17 @@
 
 <?php
 $title = "Tableau de Bord Professeur";
-include '../includes/header.php';
-include '../middlewares/professeur.php';
-include '../back_end/show-data_gen.php';
-include '../back_end/show-data_prof.php';
+require '../includes/header.php';
+require '../middlewares/professeur.php';
+require '../back_end/show_data_gen.php';
+require '../back_end/show_data_prof.php';
 
 ?>
 
 <body>
     <?php
-    include '../includes/barnav.php';
-    include 'tbd_gen.php';
+    require '../includes/barnav.php';
+    require 'tbd_gen.php';
     ?>
     <div class="row">
         <div class="col-md-12">
@@ -52,8 +52,8 @@ include '../back_end/show-data_prof.php';
                                                     <td>' . $row['DATE_DEBUT'] . '</td>
                                                     <td>' . $row['DATE_FIN'] . '</td>
                                                     <td>
-                                                        <a href="../back_end/accepter-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-success">Valider</span></a>
-                                                        <a href="../back_end/refuser-stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-danger">Refuser</span></a>
+                                                        <a href="../back_end/accepter_stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-success">Valider</span></a>
+                                                        <a href="../back_end/refuser_stage.php?id=' . $row['ID_STAGE'] . '"><span class="badge badge-danger">Refuser</span></a>
                                                     </td>
                                                 </tr> 
                                                 ';
@@ -107,7 +107,7 @@ include '../back_end/show-data_prof.php';
             </div>
         </div>
     </div>
-    <?php include '../includes/footer.php' ?>
+    <?php require '../includes/footer.php' ?>
 </body>
 
 </html>

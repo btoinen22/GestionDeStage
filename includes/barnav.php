@@ -7,7 +7,7 @@
   <?php
   //  affichage des fonctionnalités accessibles aux étudiants
   if ($_SESSION['rank'] == "professeur") {
-    echo '
+      echo '
     
     <h2 class="navbar-brand nav-link" >
       <a
@@ -49,7 +49,7 @@
   }
   //  affichage des fonctionnalités accessibles aux étudiants
   if ($_SESSION['rank'] == "etudiant") {
-    echo '
+      echo '
        <h2 class="navbar-brand nav-link" >
        <a
          href="/front_end/tdb_etudiant.php">
@@ -70,7 +70,7 @@
     
    ';
   }
-  ?>
+    ?>
   <!--   NR le 24/12/2020
 //  affichage de la barre de navigation commune aux étudiants et professeurs
 //  affichage des éléments d'identification et de la possibilité de les consulter 

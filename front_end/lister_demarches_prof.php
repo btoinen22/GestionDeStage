@@ -7,9 +7,9 @@
 
 <?php
 $title = "Démarches d'un étudiant";
-include '../includes/header.php';
-include '../middlewares/professeur.php';
-include '../back_end/show-dem-prof.php';
+require '../includes/header.php';
+require '../middlewares/professeur.php';
+require '../back_end/show_dem_prof.php';
 
 // Retourne une liste de deux requêtes : la première contient les entreprises, la deuxième l'étudiant.
 // On les assigne chacun a des variables
@@ -19,7 +19,7 @@ $nomEtudiant = $requete[1]["PRENOM_ETUDIANT"] . " " . $requete[1]["NOM_ETUDIANT"
 ?>
 
 <body>
-    <?php include '../includes/barnav.php'; ?>
+    <?php require '../includes/barnav.php'; ?>
 
     <div class="row">
         <div class="col-md-12">
@@ -44,8 +44,8 @@ $nomEtudiant = $requete[1]["PRENOM_ETUDIANT"] . " " . $requete[1]["NOM_ETUDIANT"
                                 <!-- parcours des démarches issues de la BDR
                             et affichages des caractéristiques trouvées-->
                                 <?php
-                foreach ($demarches as $row) {
-                    echo ' 
+                                foreach ($demarches as $row) {
+                                    echo ' 
                                     <tr>
                                         <td>' . join('-', array_reverse(explode('-', substr($row['DATE_DEMARCHE'], 0, 10)))) . '</td>
                                         <td>' . $row['NOM_ENTREPRISE'] . '</td>
@@ -59,7 +59,7 @@ $nomEtudiant = $requete[1]["PRENOM_ETUDIANT"] . " " . $requete[1]["NOM_ETUDIANT"
                                         </td>
                                     </tr> 
                                 ';
-                } ?>
+                                } ?>
                             </tbody>
                         </table>
                     </div>
@@ -67,6 +67,6 @@ $nomEtudiant = $requete[1]["PRENOM_ETUDIANT"] . " " . $requete[1]["NOM_ETUDIANT"
             </div>
         </div>
     </div>
-<?php include '../includes/footer.php' ?>
+<?php require '../includes/footer.php' ?>
 </body>
 </html>

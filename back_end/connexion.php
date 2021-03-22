@@ -14,14 +14,13 @@ if (isset($_GET['type'])) {
 }
 
 //Si l'utilisateur a soumis le formulaire, il est alors possible de
-// faire les traitements sur les valeurs saisies 
+// faire les traitements sur les valeurs saisies
 if (isset($_POST['connexion'])) {
-       
     $email = $_POST['email'];
     $motdepasse = $_POST['motdepasse'];
     $rank = $_GET['type'];
     // vérification dans la base selon le type d'utilisateur
-    if ($type == "professeur") { 
+    if ($type == "professeur") {
         $stmt = $db->prepare("SELECT * FROM professeur WHERE EMAIL=:email");
     } else {
         $stmt = $db->prepare("SELECT * FROM etudiant WHERE EMAIL=:email");
@@ -35,10 +34,10 @@ if (isset($_POST['connexion'])) {
  
 
     if (!empty($email) && !empty($motdepasse)) {
-        if ($stmt->rowCount() > 0) {    
-            // Vérification que les mots de passe et mail soiennt identiques       
+        if ($stmt->rowCount() > 0) {
+            // Vérification que les mots de passe et mail soiennt identiques
             if (strtoUPPER($email) == $row["EMAIL"] && $motdepasse== $row["MDP"]) {
-                // ????? dès que les mots de passes sécurisés. 
+                // ????? dès que les mots de passes sécurisés.
                 //?????password_verify($motdepasse, $row["motdepasse"]))
                 $show = true;
                 $color = "success";
@@ -54,7 +53,7 @@ if (isset($_POST['connexion'])) {
                     $_SESSION['telephone'] = $row['TEL_PROF'];
                     // affichage du tableau de bord du professeur
                     header("refresh:1; tdb_professeur.php");
-                } else {  
+                } else {
                     $_SESSION['id'] = $row['ID_ETUDIANT'];
                     $_SESSION['nom'] = $row['NOM_ETUDIANT'];
                     $_SESSION['prenom'] = $row['PRENOM_ETUDIANT'];
@@ -72,5 +71,5 @@ if (isset($_POST['connexion'])) {
             $color = "danger";
             $message = "L'email n'existe pas.";
         }
-    }        
+    }
 }

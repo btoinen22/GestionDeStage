@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
  * * NR le 24/12/2020
- *   ce fichier permet de modifer de rechercher une entreprise 
+ *   ce fichier permet de modifer de rechercher une entreprise
  *     àconnaissant son identifiant passé dans le GET
- **/ 
+ **/
 $id= $_GET['id'];
 
 $stmt = $db->prepare(
@@ -13,7 +13,7 @@ $stmt = $db->prepare(
        WHERE ENTREPRISE.ID_ENTREPRISE=:id;"
 );
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->execute(); 
+$stmt->execute();
 $entreprise = $stmt->fetch(PDO::FETCH_BOTH);
 
 // recherche des  salariés contact pour cette entreprise
@@ -25,12 +25,11 @@ $stmt = $db->prepare(
       WHERE ENTREPRISE.ID_ENTREPRISE=:id;"
 );
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->execute(); 
+$stmt->execute();
 $contacts = $stmt->fetchAll(PDO::FETCH_BOTH);
 
 // recherche des  moyens de communication
 // à présenter dans un menu déroulant
 $stmt = $db->prepare("SELECT  ID_MOYEN,LIBELLE_MOYEN  FROM moyencom;");
-$stmt->execute(); 
+$stmt->execute();
 $moyens = $stmt->fetchAll(PDO::FETCH_BOTH);
-?>

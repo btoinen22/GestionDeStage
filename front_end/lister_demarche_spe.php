@@ -25,7 +25,7 @@
                           <!-- parcours des entreprises issues de la BDR
                             et affichages des caractéristiques trouvées
                             dont le nombre de démarches effectuées auprès de l'entreprises-->
-                        <?php foreach ( $entreprisesAvecNbDem as $row ) { 
+                        <?php foreach ($entreprisesAvecNbDem as $row) {
                             echo' 
                                      <tr>
                                          <td>'. $row[ 'ID_ENTREPRISE'].'</td>
@@ -37,8 +37,8 @@
                                             <a href="creer_demarche.php?id='.$row['ID_ENTREPRISE'].'" ><span class="badge badge-success">Démarcher</span></a>
                                          </td>
                                       </tr> 
-                         '; 
-                          } ?>
+                         ';
+                        } ?>
                         </tbody>
                     </table>
                 </div>
