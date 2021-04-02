@@ -1,4 +1,7 @@
 <?php
+/* cette page sert à la création des contacts*/
+
+
 if (isset($_POST['creer_contact'])) {
 
     // Controle des saisies, ne retourne rien si la saisie n'est pas correcte
@@ -26,8 +29,7 @@ if (isset($_POST['creer_contact'])) {
             $execute = $stmt->execute();
             $success = true;
             $message = "Le contact a bien été ajoutée.";
-            // à la suite de l'actualisation-création de ses démarches, 
-            //l'étudiant est renvoyé sur son tableau de bord
+            // à la suite de la création du contact l'étudiant est renvoyé sur la page des entreprises 
             header("lister_creer_entreprises.php");
         }
         // si l'enregistrement n'a pas été effectué , 

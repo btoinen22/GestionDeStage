@@ -1,4 +1,9 @@
 <?php
+
+/*cette page sert à l'arret des démarches avec une entreprise par l'etudiant
+on modifie donc les valeurs de Refus années sio1 et sio2 en fonction de la classe de l'élève*/ 
+
+
 include_once 'db.php';
 
 
@@ -7,24 +12,21 @@ session_start();
 $id_et=$_SESSION['id'];
 
 //récuperation de l'id de la classe
-$req='SELECT ID_CLASSE FROM etudiant WHERE ID_ETUDIANT="'.$id_et.'"';
-$result=$db->query($req);
-if (!$result){echo "la récupération à échoué";} //verification que l'id est bien récupéré
-$id_classe=($result->fetch(PDO::FETCH_ASSOC));
-
-$id_cl=$id_classe['ID_CLASSE']; //echo $id_cl; //passage de valeur de l'id de la classe de PDO a INT
+$req='SELECT ID_CLASSE FROM etudiant WHERE ID_ETUDIANT=:id_et';
+$stmt=$db->prepare($req);
+$stmt->bindValue(':id_et', $id_et, PDO::PARAM_INT);
+$id_classe=$stmt->execute();
+if (!$id_classe){echo "la récupération à échoué";} //verification de la bonne récupération de l'id
 
 //recherche de l'id de l'entreprise
 $id_ent=$_GET['id'];
 
-
-
 //actualisation de la colonne annee sio 1
-if ($id_cl==1){
+if ($id_classe==1){
  
-    $query = 'UPDATE entreprise SET REFUS_ANNEESIO1=TRUE WHERE ID_ENTREPRISE="'.$id_ent.'"';
+    $query = 'UPDATE entreprise SET REFUS_ANNEESIO1=TRUE WHERE ID_ENTREPRISE=:id_ent';
         $stmt = $db->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':id_ent', $id_ent, PDO::PARAM_INT);
         
         try {
             $execute =$stmt->execute();
@@ -46,11 +48,11 @@ if ($id_cl==1){
             }
 }
 //actualisation de la valeur de la colonne annee sio 2 
-elseif ($id_cl==2){
+elseif ($id_classe==2){
     
-    $query = 'UPDATE entreprise SET REFUS_ANNEE_SIO2=TRUE WHERE ID_ENTREPRISE="'.$id_ent.'"';
+    $query = 'UPDATE entreprise SET REFUS_ANNEE_SIO2=TRUE WHERE ID_ENTREPRISE=:id_ent';
         $stmt = $db->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':id_ent', $id_ent, PDO::PARAM_INT);
         
         try {
             $execute =$stmt->execute();

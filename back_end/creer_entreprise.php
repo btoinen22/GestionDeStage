@@ -1,7 +1,7 @@
 <?php
 /**
  * NR le 24/12/2020
- *  ce fichier permet de créer une démarche quand l'utilisateur est un etudiant
+ *  ce fichier permet de créer une entreprise quand l'utilisateur est un etudiant
  **/
 // Vérification que l'utilisateur a bien saisi les informations attendues
 if (isset($_POST['creer_entreprise'])) {
@@ -33,8 +33,8 @@ if (isset($_POST['creer_entreprise'])) {
             $execute =$stmt->execute();
             $success = true;
             $message = "L'entreprise a bien été ajoutée.";
-            // à la suite de l'actualisation-création de ses démarches, 
-            //l'étudiant est renvoyé sur son tableau de bord
+            // à la suite de l'actualisation-création de l'entreprise, 
+            //l'étudiant est renvoyé sur la page des entreprises
             header("Location: ../front_end/lister_creer_entreprises.php");
         }
         // si l'enregistrement n'a pas été effectué , 
