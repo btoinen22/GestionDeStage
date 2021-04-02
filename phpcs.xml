@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fichier de configuration pour phpcs -->
+<ruleset name="APS2">
+ <description>Ruleset pour le projet APS2</description>
+
+<!-- Include the whole PHPCS standard -->
+ <rule ref="PSR2"/>
+
+ <rule ref="Generic.Files.LineLength">
+  <properties>
+   <property name="lineLimit" value="120"/>
+   <property name="absoluteLineLimit" value="0"/>
+  </properties>
+ </rule>
+</ruleset>

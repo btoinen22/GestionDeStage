@@ -3,16 +3,16 @@
 
 <?php
     $title = "Statistiques";
-    include_once 'includes/header.php';
-    include_once 'middlewares/professeur.php';
-    include_once 'scripts/show-data.php';
+    require_once 'includes/header.php';
+    require_once 'middlewares/professeur.php';
+    require_once 'scripts/show-data.php';
 ?>
 
 <body>
 
 <?php
-    include_once 'includes/leftbar.php';
-    include_once 'includes/topbar.php';
+    require_once 'includes/leftbar.php';
+    require_once 'includes/topbar.php';
 ?>
 
     <div class="lime-container">
@@ -37,7 +37,7 @@
 
                                     var data = {
                                         datasets: [{
-                                            data: <?= json_encode($data); ?>
+                                            data: <?php echo json_encode($data); ?>
                                         }],
 
                                         // These labels appear in the legend and in the tooltips when hovering different arcs
@@ -69,15 +69,16 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nom</th>
                                                 <th scope="col">Prénom</th>
-                                        <?php foreach( $non_stage as $row ) {
-                                                echo '
+                                        <?php foreach ($non_stage as $row) {
+                                            echo '
                                             <tbody>
                                                 <tr>
                                                     <td>'. $row['id'] .'</td>
                                                     <td>'. $row['nom'] .'</td>
                                                     <td>'. $row['prenom'] .'</td>
                                                 </tr>
-                                                '; } ?>
+                                                ';
+                                        } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -90,15 +91,16 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nom</th>
                                                 <th scope="col">Prénom</th>
-                                        <?php foreach( $stage as $row ) {
-                                                echo '
+                                        <?php foreach ($stage as $row) {
+                                            echo '
                                             <tbody>
                                                 <tr>
                                                     <td>'. $row['id'] .'</td>
                                                     <td>'. $row['nom'] .'</td>
                                                     <td>'. $row['prenom'] .'</td>
                                                 </tr>
-                                                '; } ?>
+                                                ';
+                                        } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -108,19 +110,6 @@
                 </div>
             </div>
         </div>
-        <div class="lime-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <span class="footer-text">2020 © iStage</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php include 'includes/footer.php' ?>
-
+<?php require 'includes/footer.php' ?>
 </body>
-
 </html>

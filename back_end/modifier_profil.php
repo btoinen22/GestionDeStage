@@ -4,15 +4,15 @@
  *   ce fichier permet de modifer le profil d'un utilisateur.
  *     Les caractéristiques : nom;prénom, tel et courriel
  *   Les modifications du mot de passe sont séparées
- **/ 
+ **/
 $show = false;
 $showMdp = false;
 $nom=$_SESSION['nom'];
 $prenom=$_SESSION['prenom'];
 $email = $_SESSION['email'];
 $telephone = $_SESSION['telephone'];
-// 
-if (isset($_POST['modifier-profil'])) {
+//
+if (isset($_POST['modifier_profil'])) {
     // Récupération des données et stockage
     $id = $_SESSION['id'];
     $nom = $_POST['nom'];
@@ -22,7 +22,7 @@ if (isset($_POST['modifier-profil'])) {
 
     
     if (!empty($nom) && !empty($prenom) && !empty($email) & !empty($telephone)) {
-        if (preg_match('%^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$%i', $telephone) && strlen($telephone) >= 10) {             
+        if (preg_match('%^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$%i', $telephone) && strlen($telephone) >= 10) {
             // Insertion des données en base
             if ($_SESSION['rank']=='etudiant') {
                 $req="UPDATE etudiant 
@@ -46,9 +46,8 @@ if (isset($_POST['modifier-profil'])) {
                 $stmt->execute();
                 $show = true;
                 $color = "success";
-                $message = "Modification réussie."; 
-            }
-            catch    (Exception $e){
+                $message = "Modification réussie.";
+            } catch (Exception $e) {
                 $message =$e;
                 $show = true;
                 $color = "danger";
@@ -96,9 +95,8 @@ if (isset($_POST['modifier-mdp'])) {
                     
                     $showMdp = true;
                     $colorMdp = "success";
-                    $messageMdp = "Modification réussie.";           
-                } 
-                catch    (Exception $e){
+                    $messageMdp = "Modification réussie.";
+                } catch (Exception $e) {
                     $message =$e;
                     $show = true;
                     $color = "danger";
@@ -107,12 +105,12 @@ if (isset($_POST['modifier-mdp'])) {
                 $showMdp = true;
                 $colorMdp = "danger";
                 $messageMdp = "Le mot de passe doit être composé de 8 caractères, 1 majuscule, 1 minuscule et un chiffre.";
-            }  
+            }
         } else {
             $showMdp = true;
             $colorMdp = "danger";
             $messageMdp = "Les deux mots de passe doivent être identiques.";
-        } 
+        }
     } else {
         $showMdp = true;
         $colorMdp = "danger";

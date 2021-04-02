@@ -9,17 +9,17 @@
 <?php
 $title = "Liste des Entreprises";
 // inclusion des fichiers hedaer, tt du type d'utilisateur
-include '../includes/header.php';
-include '../middlewares/etudiant.php';
-// inclusion des fichiers de traitements de données   
-include '../back_end/lister_entreprises.php';
-include '../back_end/show-data_gen.php';
+require '../includes/header.php';
+require '../middlewares/etudiant.php';
+// inclusion des fichiers de traitements de données
+require '../back_end/lister_entreprises.php';
+require '../back_end/show_data_gen.php';
 ?>
 
 <body>
 
     <?php
-    include '../includes/barnav.php';
+    require '../includes/barnav.php';
     ?>
 
     <div class="lime-container">
@@ -49,7 +49,7 @@ include '../back_end/show-data_gen.php';
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
                                             <?php foreach ($entreprisesAvecNbDem as $row) {
-                                                if ($row['REFUS_ANNEESIO1'] == 0)
+                                                if ($row['REFUS_ANNEESIO1'] == 0) {
                                                     echo '
                                                   <tr>
                                                     <td>' . escape($row['NOM_ENTREPRISE']) . '</td>
@@ -63,17 +63,20 @@ include '../back_end/show-data_gen.php';
                                                     </td>
                                                 </tr> 
                                                 ';
-                                                else
-                                                    echo '
+                                                } else {
+                                                            echo '
                                                   <tr>
                                                     <td>' . escape($row['NOM_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['VILLE_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['TEL_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['EMAIL_ENTREPRISE']) . '</td>
                                                     <td>' . escape($row['NB_ET']) . '</td>
-                                                    <td></td>
+                                                    <td>
+                                                        <span class="badge badge-red">n accepte pas de stagiaire</span>
+                                                    </td>
                                                   </tr> 
                                                   ';
+                                                }
                                             } ?>
                                         </tbody>
                                     </table>
@@ -91,19 +94,6 @@ include '../back_end/show-data_gen.php';
                 </div>
             </div>
         </div>
-        <div class="lime-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <span class="footer-text">2020 © iStage</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php include '../includes/footer.php' ?>
-
+<?php require '../includes/footer.php' ?>
 </body>
-
 </html>

@@ -27,11 +27,11 @@
                         <tbody>
                         <!-- parcours des démarches issues de la BDR
                             et affichages des caractéristiques trouvées-->
-                            <?php 
-                                 foreach( $demarches as $row ) {  
-                                    echo ' 
+                            <?php
+                            foreach ($demarches as $row) {
+                                echo ' 
                                     <tr>
-                                        <td>'. join('-',array_reverse(explode('-',substr($row['DATE_DEMARCHE'],0,10)))).'</td>
+                                        <td>'. join('-', array_reverse(explode('-', substr($row['DATE_DEMARCHE'], 0, 10)))).'</td>
                                         <td>'. $row['NOM_ENTREPRISE'].'</td>
                                         <td>'. $row['VILLE_ENTREPRISE'].'</td>
                                         <td>'. $row['NOM_SALARIE'].'</td>
@@ -42,7 +42,8 @@
                                             <a href="creer_demarche.php?id='.$row['ID_ENTREPRISE'].'" <span class="badge badge-success">Actualiser</span></a>
                                         </td>
                                     </tr> 
-                                '; } ?>
+                                ';
+                            } ?>
                         </tbody>
                     </table>
                  </div>

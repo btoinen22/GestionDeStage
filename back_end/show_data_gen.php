@@ -1,15 +1,15 @@
-<?php 
+<?php
 /**
  * * NR le 24/12/2020
  *   ce fichier permet de retrouver les informations générales
- *    du tableau de bord. Informations statistiques  affichées 
+ *    du tableau de bord. Informations statistiques  affichées
  * // aux étudiants et professeurs pour mesurer l'avancement général
  *  d   des recherches de la classe
- **/ 
+ **/
 // recherche des étudiants  ceux de SIO1
 // ainsi que le nombre d'étudiants
 $stmt = $db->prepare("SELECT * FROM etudiant ORDER BY nom_etudiant ASC");
-$stmt->execute(); 
+$stmt->execute();
 $etudiants = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countEtudiants = count($etudiants);
 
@@ -30,24 +30,24 @@ $req="
     GROUP BY ENTREPRISE.ID_ENTREPRISE;";
 
 $stmt = $db->prepare($req);
-$stmt->execute(); 
+$stmt->execute();
 $entreprisesAvecNbDem = $stmt->fetchAll(PDO::FETCH_BOTH);
 
-// recherche et comptage des entreprises 
+// recherche et comptage des entreprises
 //       qui acceptent encore de répondre à des stages
 $stmt = $db->prepare("SELECT * FROM entreprise WHERE REFUS_ANNEESIO1=0 ");
-$stmt->execute(); 
+$stmt->execute();
 $entreprises = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countEntreprises = count($entreprises);
 
-// recherche et comptage des entreprises 
+// recherche et comptage des entreprises
 //       qui réfusent de répondre à des stages
 $stmt = $db->prepare("SELECT * FROM entreprise WHERE REFUS_ANNEESIO1=1 ");
-$stmt->execute(); 
+$stmt->execute();
 $entrepriseRefus = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countEntreprisesRefus = count($entrepriseRefus);
 
-//  comptage de toutes les  entreprises 
+//  comptage de toutes les  entreprises
 //       qui refusent de répondre à des stages
 $countEntrepriseTotal = sql_fetch_column("SELECT COUNT(*) FROM entreprise");
 
@@ -57,4 +57,3 @@ $stmt = $db->prepare("SELECT * FROM stage WHERE ETAT='OK';");
 $stmt->execute();
 $etudiantStage = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countEtudiantStage = count($etudiantStage);
-?>

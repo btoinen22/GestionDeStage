@@ -1,17 +1,17 @@
-<?php 
+<?php
 /**
  * * NR le 24/12/2020
  *   ce fichier permet de retrouver les informations nécessaires
  *   à l'affichage du tableau de bord
  *      . savoir si le stagiaire a obtenu un stage
  *      . connaitre les démarches effectuées par le candidat
- **/ 
+ **/
 $id_et=$_SESSION['id'];
 
 $stmt = $db->prepare("SELECT * FROM stage WHERE ID_ETUDIANT=:id;");
 $id_et=$_SESSION['id'];
 $stmt->bindValue(':id', $id_et, PDO::PARAM_INT);
-$stmt->execute(); 
+$stmt->execute();
 $stage = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countStage = count($stage);
 
@@ -30,7 +30,6 @@ $stmt = $db->prepare(
 );
 
 $stmt->bindValue(':id', $id_et, PDO::PARAM_INT);
-$stmt->execute(); 
+$stmt->execute();
 $demarches = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarches= count($demarches);
-?>

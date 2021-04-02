@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php 
-    $title = "Liste des Entreprises";    
+<?php
+    $title = "Liste des Entreprises";
     // inclusion des fichiers hedaer, tt du type d'utilisateur
-    include '../includes/header.php';   
-   include '../middlewares/etudiant.php';  
-    // inclusion des fichiers de traitements de données   
-    include '../back_end/consultation_entreprise.php'; 
-    include '../back_end/show-data_gen.php'; 
-    ?>
+    require '../includes/header.php';
+   require '../middlewares/etudiant.php';
+    // inclusion des fichiers de traitements de données
+    require '../back_end/consultation_entreprise.php';
+    require '../back_end/show_data_gen.php';
+?>
 
 <body>
-
-    <?php 
-    include '../includes/barnav.php'; 
+<!--Page plus bonne identique a page lister_creer_entreprise-->
+    <?php
+    require '../includes/barnav.php';
     ?>
-		<h5 class="card-title">Liste des entreprises que vous pouvez consulter</h5>
+        <h5 class="card-title">Liste des entreprises que vous pouvez consulter</h5>
                                 <div class="table-responsives">
                                     <table class="table">
                                         <thead>
@@ -37,9 +37,10 @@
                                         et affichages des caractéristiques trouvées
                                         L'utilisateur pourra choisir l'ent pour créer
                                         la démarche de recherche effectuée auprès d'elle-->
-                                        <?php foreach ( $consult as $consult) { 
-                            if ($consult['REFUS_ANNEESIO1']|| $consult['REFUS_ANNEE_SIO2']==1){
-                            echo' 
+                                       <!-- la class="table danger"permet de mettre en rouge les ligne quand la valeur est une fois a 1 ,entreprise ne prend plus de stagiaire-->
+                                        <?php foreach ($consult as $consult) {
+                                            if ($consult['REFUS_ANNEESIO1']|| $consult['REFUS_ANNEE_SIO2']==1) {
+                                                echo' 
                                      <tr class="table-danger">
                                          <td>'. $consult[ 'NOM_ENTREPRISE'].'</td>
                                          <td>'. $consult[ 'ADRESSE_ENTREPRISE'].'</td>
@@ -50,10 +51,9 @@
                                          <td>'. $consult[ 'REFUS_ANNEESIO1'].'</td>
                                          <td>'. $consult[ 'REFUS_ANNEE_SIO2'].'</td>
                                       </tr> 
-                         '; 
-                          }
-                            else {
-                                 echo'
+                         ';
+                                            } else {
+                                                        echo'
                                 <tr >  
                                     <td>'. $consult[ 'NOM_ENTREPRISE'].'</td>
                                     <td>'. $consult[ 'ADRESSE_ENTREPRISE'].'</td>
@@ -65,11 +65,13 @@
                                     <td>'. $consult[ 'REFUS_ANNEE_SIO2'].'</td>
                                     
                                 </tr>
-                            ';  }  }
+                            ';
+                                            }
+                                        }
                           
                           
                           
-                          ?>
+                                        ?>
                          </tbody>       
                         </table>
 

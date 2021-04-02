@@ -28,24 +28,23 @@ if ($id_classe==1){
         $stmt = $db->prepare($query);
         $stmt->bindValue(':id_ent', $id_ent, PDO::PARAM_INT);
         
-        try {
-            $execute =$stmt->execute();
-            $success = true;
-            $message = "l'arret des démarches à été pris en compte";
+    try {
+        $execute =$stmt->execute();
+        $success = true;
+        $message = "l'arret des démarches à été pris en compte";
             
-            // à la suite de l'actualisation-création de ses démarches, 
-            //l'étudiant est renvoyé a la page des démarches
-            header('Location:../front_end/lister_demarches.php' );
-        }
+        // à la suite de l'actualisation-création de ses démarches,
+        //l'étudiant est renvoyé a la page des démarches
+        header('Location:../front_end/lister_demarches.php');
+    }
         
-        // si l'enregistrement n'a pas été effectué , 
-            //traitement d'avertissement de l'utilisateur
-            catch    (Exception $e){
-                $message =$e;
-                $success = false;
-                $message ="l'arrêt des démarches à échoué";
-                
-            }
+    // si l'enregistrement n'a pas été effectué ,
+    //traitement d'avertissement de l'utilisateur
+    catch (Exception $e) {
+        $message =$e;
+        $success = false;
+        $message ="l'arrêt des démarches à échoué";
+    }
 }
 //actualisation de la valeur de la colonne annee sio 2 
 elseif ($id_classe==2){
@@ -54,23 +53,21 @@ elseif ($id_classe==2){
         $stmt = $db->prepare($query);
         $stmt->bindValue(':id_ent', $id_ent, PDO::PARAM_INT);
         
-        try {
-            $execute =$stmt->execute();
-            $success = true;
-            $message = "l'arret des démarches à été pris en compte";
+    try {
+        $execute =$stmt->execute();
+        $success = true;
+        $message = "l'arret des démarches à été pris en compte";
             
-            // à la suite de l'actualisation-création de ses démarches, 
-            //l'étudiant est renvoyé a la page des démarches
-            header('Location:../front_end/lister_demarches.php' );
-        }
+        // à la suite de l'actualisation-création de ses démarches,
+        //l'étudiant est renvoyé a la page des démarches
+        header('Location:../front_end/lister_demarches.php');
+    }
         
-        // si l'enregistrement n'a pas été effectué , 
-            //traitement d'avertissement de l'utilisateur
-            catch    (Exception $e){
-                $message =$e;
-                $success = false;
-                $message ="l'arrêt des démarches à échoué";
-                
-            }
+    // si l'enregistrement n'a pas été effectué ,
+    //traitement d'avertissement de l'utilisateur
+    catch (Exception $e) {
+        $message =$e;
+        $success = false;
+        $message ="l'arrêt des démarches à échoué";
+    }
 }
-

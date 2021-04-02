@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-    $title = "Mon profil";    
-    include '../includes/header.php';   
-    include '../middlewares/etudiant.php';     
-    include '../back_end/modifier-profil.php';          
-    include '../back_end/show-data_gen.php';     
-    ?>
+<?php
+    $title = "Mon profil";
+    require '../includes/header.php';
+    require '../middlewares/etudiant.php';
+    require '../back_end/modifier_profil.php';
+    require '../back_end/show_data_gen.php';
+?>
 
 <body>
-    <?php include '../includes/barnav.php'; ?>
+    <?php require '../includes/barnav.php'; ?>
 
 
     <div class="lime-container">
@@ -24,7 +24,7 @@
                                 <h5 class="card-title">Modifier mon Profil</h5>
                                 <p>Renseignez vos informations personnelles pour le bon fonctionnement de l'application.
                                 </p>
-                                <form method="POST" id="modifier-profil">
+                                <form method="POST" id="modifier_profil">
                                     <div class="form-row mt-5">
                                         <div class="form-group col-md-6">
                                             <label for="Nom">Nom de l'étudiant</label>
@@ -51,15 +51,16 @@
                                                 placeholder="Ex: +33123456789">
                                         </div>
                                     </div>
-                                    <button type="submit" id="modifier-profil" name="modifier-profil"
+                                    <button type="submit" id="modifier_profil" name="modifier_profil"
                                         class="btn btn-primary">Modifier</button>
                                 </form>
                                 <div class="mt-4">
-                                    <?php if($show == true) { 
-                                    echo '
+                                    <?php if ($show == true) {
+                                        echo '
                                     <p class="text-'.$color.'">'.$message.'</p>
-                                    ';} 
-                                ?>
+                                    ';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -88,11 +89,12 @@
                                         class="btn btn-primary">Modifier</button>
                                 </form>
                                 <div class="mt-4">
-                                    <?php if($showMdp == true) { 
-                                    echo '
+                                    <?php if ($showMdp == true) {
+                                        echo '
                                     <p class="text-'.$colorMdp.'">'.$messageMdp.'</p>
-                                    ';} 
-                                ?>
+                                    ';
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -100,19 +102,6 @@
                 </div>
             </div>
         </div>
-        <div class="lime-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <span class="footer-text">2020 © iStage</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php include '../includes/footer.php' ?>
-
+<?php require '../includes/footer.php' ?>
 </body>
-
 </html>

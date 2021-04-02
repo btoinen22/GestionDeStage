@@ -11,7 +11,7 @@
     $idDemarche = $_GET["dem"];
 
     // On récupère la démarche, ainsi que les données de l'étudiant a partir des IDs
-    require "../back_end/show-dem-prof.php";
+    require "../back_end/show_dem_prof.php";
     
     $requete = demarcheSpecifique($idDemarche, $idEtudiant, $db);
     $demarche = $requete[0][0];
@@ -20,7 +20,7 @@
 
 <body>
     <?php
-    include '../includes/barnav.php';
+    require '../includes/barnav.php';
     ?>
     <div class="lime-container">
         <div class="lime-body">
@@ -33,8 +33,8 @@
                                 <div class="mt-4">
 
                                     <?php if (isset($success)) {
-        echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
-    } ?>
+                                        echo '<p class="text-'.($success == true ? 'success' : 'danger').'">'.$message.'</p>';
+                                    } ?>
                                 </div>
                                 <div class="card">
                                     <!-- Présentation a retravailler ? -->
@@ -86,21 +86,6 @@
         </div>
     </div>
 
-
-
-
-    <div class="lime-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="footer-text">2020 © iStage</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <?php include '../includes/footer.php' ?>
+<?php require '../includes/footer.php' ?>
 </body>
-
 </html>
