@@ -32,11 +32,11 @@ if (isset($_POST['connexion'])) {
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
-
     if (!empty($email) && !empty($motdepasse)) {
         if ($stmt->rowCount() > 0) {
-            // Vérification que les mots de passe et mail soiennt identiques
-            if (strtoUPPER($email) == $row["EMAIL"] && $motdepasse== $row["MDP"]) {
+            // Vérification que les mots de passe et mail soient identiques
+            
+            if (strtoUPPER($email) == $row["EMAIL"] && password_verify($motdepasse,$row["MDP"])) {
                 // ????? dès que les mots de passes sécurisés.
                 //?????password_verify($motdepasse, $row["motdepasse"]))
                 $show = true;

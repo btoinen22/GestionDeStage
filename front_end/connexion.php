@@ -57,6 +57,7 @@ $type = $_GET['type'];
                                         Retour au <a href="lobby.php" class="text-primary">Lobby</a>
                                     </div>
                                 </form>
+                                <button type="button" name="crypte mdp" id="crypte" class="btn btn-block btn-danger btn-lg"><a href="../back_end/Script_mdp_bdr.php">declenche scrypt</a></button>
                             </div>
                         </div>
                     </div>
@@ -64,7 +65,6 @@ $type = $_GET['type'];
             </div>
         </div>
     </div>
-
     <?php require '../includes/footer.php' ?>
 
 </body>
